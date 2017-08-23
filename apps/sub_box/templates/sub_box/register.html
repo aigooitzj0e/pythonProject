@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Login and Registration</title>
+   <meta charset="utf-8">
+ 	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/user_app.css' %}" title="Login Registration">
+</head>
+<body>
+<!-- we can use the line below to see all of our data in our template -->
+	<h1>Welcome!</h1>
+	<div id="register">
+		<h3>Registration</h3>
+		{% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+ 		<form method="POST" action="/register">
+ 		{% csrf_token %}
+ 		<table>
+ 			<tbody>
+ 				<tr>
+ 					<td>Name:</td>
+					<td><input id="name" type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>Email:</td> 
+					<td><input id="email" type="email" name="email"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input id="password" type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td>Confirm Password:</td>
+					<td><input id="password" type="password" name="confirm"></td>
+				</tr>
+				<tr>
+					<td>Birthdate:</td>
+					<td><input id="date" type="date" name="bday"></td>
+				</tr>
+			</tbody>
+		</table>
+		<input class="button" type="submit" value="Register">	
+		</form>
+  	</div>
+</body>
+</html>
