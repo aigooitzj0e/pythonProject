@@ -83,7 +83,7 @@ class User(models.Model):
 
 class Plan(models.Model):
 	name = models.CharField(max_length=255)
-	strain = models.CharField(max_length=255)
+	# strain = models.ChoiceField(widget=forms.RadioSelect)
 	user = models.ForeignKey(User, related_name="subscribed")
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
