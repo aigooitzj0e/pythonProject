@@ -5,40 +5,41 @@
 	<meta charset="utf-8">
 	<title>Member</title>
 	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/user_app.css' %}" title="Login">
+	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
 </head>
-
 <body>
-	<div id="navbar">
+	<nav>
 		<ul>
-			<li><a href="/" class="">Home</a></li>
-			<li><a href="" class="">About Us</a></li>
-			<li><a href="" class="">How It Works</a></li>
-			<li><a href="" class="">Contact Us</a></li>
-			<li><a id="logout" href="" class="">Contact Us</a></li>
+			<li><a class="nbl" href="#">Home</a></li>
+			<li><a class="nbl" href="#sec1">About Us</a></li>
+			<li><a class="nbl" href="#">How it Works</a></li>
+			<li><a class="nbl" href="#">Contact</a></li>
+			<li id="login"><a class="nbl" href="/member" onclick="openPopupMenu()">Login</a></li>
 		</ul>
-	</div>
+	</nav>
 	<div id="themepic">
 		<h2>Summer Nights</h2>
 		<h1>Our Theme this Month is:</h1>
 	</div>
-	<h3>Welcome {{ User.name }}! Your plan is:</h3> {% for plan in plans %}
-	<h3>plan.name</h3> {% endfor %}
+	<h3>Welcome {{ User.name }}! Your plan is:</h3>
+	{% for plan in plans %}
+	<h3>plan.name</h3>
+	{% endfor %}
 	<h2>Change your plan:</h2>
 	<p>Click on your Choice to view</p>
 	<form class="form" action="#">
-		<ul id="planul">
-			<li id="planli">
-				<input class="plans" type='radio' value='Indica' name='strain' id='indica' />
-				<label class="planlabel" for='Indica'>INDICA</label>
+		<ul class="strains">
+			<li>
+				<input id="Indica" type='radio' value='Indica' name='strain'/>
+				<label for='Indica'>INDICA</label>
 			</li>
 			<li>
-				<input class="plans" type='radio' value='Sativa' name='strain' id='sativa' />
-				<label class="planlabel" for='radio1'>SATIVA</label>
+				<input id="Sativa" type='radio' value='Sativa' name='strain'/>
+				<label for='Sativa'>SATIVA</label>
 			</li>
 			<li>
-				<input class="plans" type='radio' value='Hybrid' name='strain' id='hybrid' />
-				<label class="planlabel" for='radio1'>HYBRID</label>
+				<input id="Hybrid" type='radio' value='Hybrid' name='strain' checked="checked"/>
+				<label for='Hybrid'>HYBRID</label>
 			</li>
 		</ul>
 		<div class="pics">

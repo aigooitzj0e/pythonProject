@@ -1,4 +1,5 @@
 /*Joes CSS*/
+
 body, html {
     height: 100%;
     margin:0;
@@ -11,6 +12,8 @@ body, html {
 
 nav ul{
     list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
 }
 
 nav li{
@@ -18,7 +21,6 @@ nav li{
     margin-right: 20px;
     position: relative;
 }
-
 
 nav{
     /*overflow: hidden;*/
@@ -29,6 +31,10 @@ nav{
     z-index: 20;
 }
 
+.logo{
+    display: inline-block;
+    height: 50px;
+}
 #login {
     /*float: left;*/
 }
@@ -59,7 +65,7 @@ nav{
 }
 
 .pimg1 {
-    background-image: url('../img/img1.jpg');
+    background-image: url('../img/banner1.jpg');
     min-height: 100%;
     position: relative;
     /*opacity: 0.70;*/
@@ -74,17 +80,24 @@ nav{
     top: 50%;
     width: 100%;
     text-align: center;
-    color: white;
+
     font-size: 27px;
     letter-spacing: 8px;
 }
 
 .border{
     background-color: #111;
-    color: #fff;
+    color: white;
     padding: 20px;
     opacity: 0.80;
+}
 
+.green {
+    color: #00c87f;
+}
+
+.centerh1 {
+    text-align: center;
 }
 
 #about_us {
@@ -103,10 +116,23 @@ nav{
     box-shadow: 10px 10px 10px gray;
 }
 
+.howitworks {
+    width: 46%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+
+
+
+
 /*Will CSS*/
 #show {
     display: show;
-    
+
 }
 #title_border {
     font-family: sans-serif;
@@ -127,8 +153,9 @@ nav{
     text-align: center;
     right: 5px;
     top:5px;
+
     cursor: pointer;
-    
+
 }
 
 #popup_close p {
@@ -166,23 +193,44 @@ nav{
 
 }
 
+
+
 /* Romo CSS */
+.strains {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
 
-#planul {
-	list-style: none;
+.strains li {
+     float:left;
+     margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
 }
-#planli {
-	display: inline-block;
-	margin-right: 15px;
-}
-.plans {
-	visibility:hidden;
-}
-.planlabel {
-	cursor: pointer;
-}
-.plans:checked + .plan
 
-label {
-	background: black;
+.strains label, .strains input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 }
+
+.strains input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+
+.strains input[type="radio"]:checked + label,
+.checked + label {
+    opacity: .7;
+}
+
+.strains label {
+     padding:5px;
+     border:1px solid #CCC;
+     cursor:pointer;
+    z-index:90;
