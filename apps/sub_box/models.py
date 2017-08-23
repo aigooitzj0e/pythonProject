@@ -19,8 +19,8 @@ class UserManager(models.Manager):
 		elif not re.match(NAME_REGEX, postData['last_name']):
 			errors['name'] = "Name must be letter characters only"
 		
-		if len(postData['bday'])<0:
-			errors['bday'] = "Birthdate can not be blank"
+		if len(postData['bday'])<22:
+			errors['bday'] = "Must be 21 and over."
 		elif datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
 			errors['bday'] = "The date cannot be in the future"
 
@@ -34,7 +34,7 @@ class UserManager(models.Manager):
 		if len(postData['password'])<8:
 			errors['password']="Password must be at least 8 characters!"
 		elif postData['password']!=postData['confirm']:
-			errors['confirm']="Password is not valid"
+			errors['confirm']="Password is not valid."
 
 		if len(errors) == 0:
 			hash1 = bcrypt.hashpw((postData['password'].encode()),bcrypt.gensalt(5))
@@ -42,7 +42,7 @@ class UserManager(models.Manager):
 			new_user=User.objects.create(
 				first_name=postData['first_name'],
 				last_name=postData['last_name'],
-				birthdate=postData['bday'],
+				bday=postData['bday'],
 				email=postData['email'],
 				password=hash1,
 				
@@ -50,11 +50,41 @@ class UserManager(models.Manager):
 			return new_user.id
 		return errors
 
+def LoginValid(self,postData):
+		errors ={}
+		if len(postData['email']) <1:
+			errors['login_email'] = "Enter email"
+		try:
+			user=User.objects.get(email=postData['email'])
+			if not bcrypt.checkpw(postData['password'].encode(),user.password.encode()):
+				errors['password']="Email/Password incorrect"
+		except:
+			errors['loginerror'] = "Incorrect login info. Try again or register an account."
+		if errors:
+			return errors
+		return user.id
+
+class PlanManager(models.Manager):
+	def PlanValid(self, postData, id):
+		errors = {}
+		if len(postData['strain']) #get strain
+
 class User(models.Model):
-	name  = models.CharField(max_length=255)
+	first_name  = models.CharField(max_length=255)
+	last_name = models.CharField(max_length=255)
+	bday = models.DateField()
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
 	objects = UserManager()
+
+class Plan(models.Model):
+	name = models.CharField(max_length=255)
+	strain = models.CharField(max_length=255)
+	user = models.ForeignKey(User, related_name="subscribed")
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+
+	objects = PlanManager()

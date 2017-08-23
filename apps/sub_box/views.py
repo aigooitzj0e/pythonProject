@@ -10,24 +10,16 @@ from django.contrib import messages
 def index(request):
 	return render(request, 'sub_box/index.html')
 
-def main(request):
-	return render(request,'sub_box/index.html')
-
 
 def login(request):
 	errors=User.objects.LoginValid(request.POST)
 	if type(errors) ==dict:
 		for error in errors.itervalues():
 			messages.error(request, error)
-		return redirect('/')
+		return redirect('/') #Must redirect to pop up login
 	request.session['user_id']=errors
 	messages.success(request, "You are logged in!")
-	return redirect('/travels')
-# 		return redirect('/success')
-
-
-
-
+	return redirect('/member')
 
 def register(request):
 	errors=User.objects.RegValid(request.POST)
@@ -39,7 +31,20 @@ def register(request):
 		return redirect('/')
 	request.session['user_id']=errors
 	messages.success(request, "You are registered!")
-	return redirect('/travels')	
+	return redirect('/member')	
+
+def unsubscribe(request):
+	return redirect('/unsubscribe')
+
+def member(request):
+	errors=User.objects.PlanValid(request.POST)
+	if type(errors)==dict:
+		for error in errors.itervalues():
+			messages.error(request, error)
+		return redirect('/')
+	request.session['user_id']=errors
+	messages.success(request, "You have subscribed!")
+	return redirect('/member')	
 
 def logout(request):
 	request.session.clear()
