@@ -73,3 +73,16 @@ a:hover{
     text-align: center;
     padding: 50px 80px;
 }
+
+
+
+
+
+
+
+
+
+/*Will CSS*/
+.hidden_form {
+    visibility: hidden;
+}

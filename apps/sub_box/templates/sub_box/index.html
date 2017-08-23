@@ -4,7 +4,7 @@
         <title>Login</title>
         <meta charset="utf-8">
  	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/user_app.css' %}" title="Login">
+	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
     </head>
     <body>
         <nav>
@@ -40,25 +40,25 @@
 
         <!-- FORM STARTS HERE -->
         <div class="hidden_form" id="login">
-		<h3>Login</h3>
-		<form method="POST" action="/login">
-		<h1>Welcome!</h1>
-		{% csrf_token %}
-		<table>
-			<tbody>
-				<tr>
-					<td>Username:</td>
-					<td><input id="user_name" type='text' name='user_name' value=''></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><input id="password" type='password' name='password' value=''></td>
-				</tr>
-			</tbody>
-		</table>
-		<input class="button" type="submit" value="Login">
-		</form>
-	</div>
+    		<h3>Login</h3>
+    		<form method="POST" action="/login">
+    		<h1>Welcome!</h1>
+    		{% csrf_token %}
+    		<table>
+    			<tbody>
+    				<tr>
+    					<td>Username:</td>
+    					<td><input id="user_name" type='text' name='user_name' value=''></td>
+    				</tr>
+    				<tr>
+    					<td>Password:</td>
+    					<td><input id="password" type='password' name='password' value=''></td>
+    				</tr>
+    			</tbody>
+    		</table>
+    		<input class="button" type="submit" value="Login">
+    		</form>
+	    </div>
 
     </body>
 </html>
