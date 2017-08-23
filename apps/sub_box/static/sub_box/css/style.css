@@ -1,3 +1,4 @@
+/*Joes CSS*/
 body, html {
     height: 100%;
     margin:0;
@@ -13,36 +14,53 @@ nav ul{
 }
 
 nav li{
-    display: inline;
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
 }
+
 
 nav{
-    background-color: white;
-    width: 100%;
-}
-
-.fixed-navbar{
-    overflow: hidden;
-    background-color: white;
+    /*overflow: hidden;*/
+    background-color: black;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 20;
 }
 
-a {
-    padding: 0px 5px;
-    text-decoration: none;
-    color: black;
+#login {
+    /*float: left;*/
 }
 
-a:hover{
-    color: rgb(36, 124, 77);
+.nbl {
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+}
+
+.nbl:hover{
+    color: white;
+}
+
+.nbl::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 225ms;
+}
+
+.nbl:hover::before {
+    width: 100%
 }
 
 .pimg1 {
     background-image: url('../img/img1.jpg');
-    min-height: 96%;
+    min-height: 100%;
     position: relative;
     /*opacity: 0.70;*/
     background-position: center;
@@ -69,20 +87,43 @@ a:hover{
 
 }
 
-.section {
-    text-align: center;
-    padding: 50px 80px;
+#about_us {
+    width: 1200px;
+    margin: 0 auto;
 }
 
+#sec1 {
+    width: 55%;
+    /*text-align: center;*/
+    padding: 50px 0px 50px 80px;
+    display: inline-block;
+}
 
-
-
-
-
-
-
+.about_us_pic {
+    box-shadow: 10px 10px 10px gray;
+}
 
 /*Will CSS*/
 .hidden_form {
     visibility: hidden;
+}
+
+
+/* Romo CSS */
+
+#planul {
+	list-style: none;
+}
+#planli {
+	display: inline-block;
+	margin-right: 15px;
+}
+.plans {
+	visibility:hidden;
+}
+.planlabel {
+	cursor: pointer;
+}
+.plans:checked + .planlabel {
+	background: black;
 }
