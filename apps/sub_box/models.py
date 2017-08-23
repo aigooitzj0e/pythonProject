@@ -67,7 +67,7 @@ def LoginValid(self,postData):
 class PlanManager(models.Manager):
 	def PlanValid(self, postData, id):
 		errors = {}
-		if len(postData['strain'])
+		if len(postData['strain']) #get strain
 
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)

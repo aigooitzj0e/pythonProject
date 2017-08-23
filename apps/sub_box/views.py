@@ -36,7 +36,7 @@ def register(request):
 def unsubscribe(request):
 	return redirect('/unsubscribe')
 
-def plan(request):
+def member(request):
 	errors=User.objects.PlanValid(request.POST)
 	if type(errors)==dict:
 		for error in errors.itervalues():
