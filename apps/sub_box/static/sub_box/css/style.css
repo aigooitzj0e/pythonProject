@@ -144,27 +144,6 @@ nav{
     text-align: center;
 
 }
-#popup_close {
-    position: absolute;
-    width:25px;
-    height: 25px;
-    border-radius: 25px;
-    border: 2px solid black;
-    text-align: center;
-    right: 5px;
-    top:5px;
-
-    cursor: pointer;
-
-}
-
-#popup_close p {
-    margin-top:5px;
-    font-family: sans-serif;
-    font-weight:bold;
-   
-
-}
 
 #popup_bg {
     position: fixed;
@@ -192,7 +171,30 @@ nav{
     /*padding: 50px;*/
 
 }
+#popup_main form{
 
+    padding:50px;
+}
+#popup_close {
+    position: absolute;
+    width:25px;
+    height: 25px;
+    border-radius: 25px;
+    border: 2px solid black;
+    text-align: center;
+    right: 5px;
+    top:5px;
+  /*  cursor: pointer;*/
+
+}
+/*
+#popup_close p {
+    margin-top:5px;
+    font-family: sans-serif;
+    font-weight:bold;
+   
+
+}*/
 
 
 /* Romo CSS */
