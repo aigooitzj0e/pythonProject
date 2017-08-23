@@ -73,13 +73,7 @@ class PlanManager(models.Manager):
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
-<<<<<<< HEAD
-	bday = models.DateField(null=T
-
-	rue)
-=======
 	bday = models.DateField(null=True)
->>>>>>> 548b94a15fd7e8de10599dfa8aef24ddfa84a7d8
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
 	created_at = models.DateTimeField(auto_now_add=True)

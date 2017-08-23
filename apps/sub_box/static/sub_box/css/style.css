@@ -106,7 +106,7 @@ nav{
 /*Will CSS*/
 #show {
     display: show;
-    
+
 }
 #title_border {
     font-family: sans-serif;
@@ -125,7 +125,7 @@ nav{
     text-align: center;
     right: 5px;
     top:5px;
-    
+
 }
 
 #popup_close p {
@@ -160,22 +160,41 @@ nav{
 }
 
 /* Romo CSS */
+.strains {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
 
-#planul {
-	list-style: none;
+.strains li {
+     float:left;
+     margin:0 5px 0 0;
+    width:100px;
+    height:40px;
+    position:relative;
 }
-#planli {
-	display: inline-block;
-	margin-right: 15px;
-}
-.plans {
-	visibility:hidden;
-}
-.planlabel {
-	cursor: pointer;
-}
-.plans:checked + .plan
 
-label {
-	background: black;
+.strains label, .strains input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 }
+
+.strains input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+
+.strains input[type="radio"]:checked + label,
+.checked + label {
+    opacity: .7;
+}
+
+.strains label {
+     padding:5px;
+     border:1px solid #CCC;
+     cursor:pointer;
+    z-index:90;
