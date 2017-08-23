@@ -46,6 +46,9 @@ def member(request):
 	# messages.success(request, "You have subscribed!")
 	return render(request, "sub_box/member.html")
 
+def cart(request):
+	return redirect('/cart')
+
 def logout(request):
 	request.session.clear()
 	return redirect('/')
