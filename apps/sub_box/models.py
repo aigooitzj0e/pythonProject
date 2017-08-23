@@ -18,7 +18,7 @@ class UserManager(models.Manager):
 			errors['name']="Name must be at least 3 characters!"
 		elif not re.match(NAME_REGEX, postData['last_name']):
 			errors['name'] = "Name must be letter characters only"
-		
+
 		if len(postData['bday'])<22:
 			errors['bday'] = "Must be 21 and over."
 		elif datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
@@ -45,7 +45,7 @@ class UserManager(models.Manager):
 				bday=postData['bday'],
 				email=postData['email'],
 				password=hash1,
-				
+
 			)
 			return new_user.id
 		return errors
@@ -66,8 +66,9 @@ def LoginValid(self,postData):
 
 class PlanManager(models.Manager):
 	def PlanValid(self, postData, id):
-		errors = {}
-		if len(postData['strain']) #get strain
+		# errors = {}
+		# if len(postData['strain']) #get strain
+		pass
 
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)

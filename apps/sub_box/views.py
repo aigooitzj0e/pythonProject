@@ -31,20 +31,20 @@ def register(request):
 		return redirect('/')
 	request.session['user_id']=errors
 	messages.success(request, "You are registered!")
-	return redirect('/member')	
+	return redirect('/member')
 
 def unsubscribe(request):
 	return redirect('/unsubscribe')
 
 def member(request):
-	errors=User.objects.PlanValid(request.POST)
-	if type(errors)==dict:
-		for error in errors.itervalues():
-			messages.error(request, error)
-		return redirect('/')
-	request.session['user_id']=errors
-	messages.success(request, "You have subscribed!")
-	return redirect('/member')	
+	# errors=User.objects.PlanValid(request.POST)
+	# if type(errors)==dict:
+	# 	for error in errors.itervalues():
+	# 		messages.error(request, error)
+	# 	return redirect('/')
+	# request.session['user_id']=errors
+	# messages.success(request, "You have subscribed!")
+	return render(request, "sub_box/member.html")
 
 def logout(request):
 	request.session.clear()
