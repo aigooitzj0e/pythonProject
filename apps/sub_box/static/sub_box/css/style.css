@@ -76,13 +76,27 @@ a:hover{
 
 
 
-
-
-
-
-
-
 /*Will CSS*/
 .hidden_form {
     visibility: hidden;
+}
+
+
+/* Romo CSS */
+
+#planul {
+	list-style: none;
+}
+#planli {
+	display: inline-block;
+	margin-right: 15px;
+}
+.plans {
+	visibility:hidden;
+}
+.planlabel {
+	cursor: pointer;
+}
+.plans:checked + .planlabel {
+	background: black;
 }
