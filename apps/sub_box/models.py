@@ -18,7 +18,7 @@ class UserManager(models.Manager):
 			errors['name']="Name must be at least 3 characters!"
 		elif not re.match(NAME_REGEX, postData['last_name']):
 			errors['name'] = "Name must be letter characters only"
-		
+
 		if len(postData['bday'])<22:
 			errors['bday'] = "Must be 21 and over."
 		elif datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
@@ -45,7 +45,7 @@ class UserManager(models.Manager):
 				bday=postData['bday'],
 				email=postData['email'],
 				password=hash1,
-				
+
 			)
 			return new_user.id
 		return errors
@@ -81,8 +81,14 @@ class User(models.Model):
 	objects = UserManager()
 
 class Plan(models.Model):
+	STRAIN_CHOICES = (
+		('Indica', 'Indica'),
+		('Sativa', 'Sativa'),
+		('Hybrid', 'Hybrid')
+	)
+
 	name = models.CharField(max_length=255)
-	strain = models.CharField(max_length=255)
+	strain = models.CharField(max_length=255, choices=STRAIN_CHOICES)
 	user = models.ForeignKey(User, related_name="subscribed")
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
