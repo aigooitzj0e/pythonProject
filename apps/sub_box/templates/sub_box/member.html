@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Member</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/user_app.css' %}" title="Login">
+	</head>
+	<body>
+		<div id="navbar">
+			<ul>
+				<li><a href="" class="">Home</a></li>
+				<li><a href="" class="">About Us</a></li>
+				<li><a href="" class="">How It Works</a></li>
+				<li><a href="" class="">Contact Us</a></li>
+				<li><a id="logout" href="" class="">Contact Us</a></li>
+			</ul>
+		</div>
+		<div id="themepic">
+			<h2>Summer Nights</h2>
+			<h1>Our Theme this Month is:</h1>
+		</div>
+		<h3>Welcome {{ User.name }}! Your plan is:</h3>
+		{% for plan in plans %}
+			<h3>plan.name</h3>
+		{% endfor %}
+		<h2>Change your plan:</h2>
+		<form class="planchange" action="#" method="POST">
+			<input type="submit" name="sativa" value="SATIVA">
+			<input type="submit" name="indica" value="INDICA">
+			<input type="submit" name="hybrid" value="HYBRID">
+		</form>
+	</body>
+</html>
