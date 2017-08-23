@@ -7,16 +7,38 @@
 	<link rel="stylesheet" href="{% static 'css/user_app.css' %}" title="Login">
     </head>
     <body>
-        <h1>Landing Page</h1>
-        <div id="navbar">
-        <ul>
-        	<li><a href="" class="">Subscribe</a></li>
-        	<li><a href="" class="">About Us</a></li>
-        	<li><a href="" class="">How It Works</a></li>
-        	<li><a href="" class="">Members Only</a></li>
-        	<li><a href="" class="">Contact Us</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sec1">Section 1</a></li>
+                <li><a href="#">Blank</a></li>
+                <li><a href="#">Blank</a></li>
+                <li><a href="#">Blank</a></li>
+            </ul>
+        </nav>
+
+        <div class="pimg1">
+            <div class="ptext1">
+                <span class="border">
+                    7LEAVES
+                </span>
+            </div>
         </div>
+
+
+        <section id="sec1" class ="section section-light">
+            <h2>Section one</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga quia totam delectus commodi, et id? Hic tempora mollitia totam odit impedit fugiat, harum dolores blanditiis aliquam exercitationem eius tenetur, amet ad est autem maiores nulla sunt unde quas recusandae voluptatem! Iure numquam totam sed, error consequuntur temporibus natus facilis beatae est quidem, quibusdam ducimus aut ipsa debitis libero accusantium quae! Esse modi, magni! Voluptatibus!</p>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- FORM STARTS HERE -->
         <div class="hidden_form" id="login">
 		<h3>Login</h3>
 		<form method="POST" action="/login">
@@ -25,11 +47,11 @@
 		<table>
 			<tbody>
 				<tr>
-					<td>Username:</td> 
+					<td>Username:</td>
 					<td><input id="user_name" type='text' name='user_name' value=''></td>
 				</tr>
 				<tr>
-					<td>Password:</td> 
+					<td>Password:</td>
 					<td><input id="password" type='password' name='password' value=''></td>
 				</tr>
 			</tbody>
@@ -37,6 +59,6 @@
 		<input class="button" type="submit" value="Login">
 		</form>
 	</div>
-	
+
     </body>
 </html>
