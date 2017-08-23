@@ -1,4 +1,5 @@
 /*Joes CSS*/
+
 body, html {
     height: 100%;
     margin:0;
@@ -11,6 +12,8 @@ body, html {
 
 nav ul{
     list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
 }
 
 nav li{
@@ -18,7 +21,6 @@ nav li{
     margin-right: 20px;
     position: relative;
 }
-
 
 nav{
     /*overflow: hidden;*/
@@ -29,6 +31,10 @@ nav{
     z-index: 20;
 }
 
+.logo{
+    display: inline-block;
+    height: 50px;
+}
 #login {
     /*float: left;*/
 }
@@ -74,17 +80,24 @@ nav{
     top: 50%;
     width: 100%;
     text-align: center;
-    color: white;
+
     font-size: 27px;
     letter-spacing: 8px;
 }
 
 .border{
     background-color: #111;
-    color: #fff;
+    color: white;
     padding: 20px;
     opacity: 0.80;
+}
 
+.green {
+    color: #00c87f;
+}
+
+.centerh1 {
+    text-align: center;
 }
 
 #about_us {
@@ -102,6 +115,19 @@ nav{
 .about_us_pic {
     box-shadow: 10px 10px 10px gray;
 }
+
+.howitworks {
+    width: 46%;
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+
+
+
 
 /*Will CSS*/
 #show {
@@ -158,6 +184,8 @@ nav{
     margin-top: -250px;
 
 }
+
+
 
 /* Romo CSS */
 .strains {
