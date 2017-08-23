@@ -124,6 +124,8 @@ nav{
 .planlabel {
 	cursor: pointer;
 }
-.plans:checked + .planlabel {
+.plans:checked + .plan
+
+label {
 	background: black;
 }
