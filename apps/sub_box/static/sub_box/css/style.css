@@ -31,10 +31,11 @@ nav{
     z-index: 20;
 }
 
-.logo{
+.logo1{
     display: inline-block;
     height: 50px;
 }
+
 #login {
     /*float: left;*/
 }
@@ -69,6 +70,17 @@ nav{
     min-height: 100%;
     position: relative;
     /*opacity: 0.70;*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.pimg2 {
+    background-image: url('../img/banner2.jpeg');
+    min-height: 400px;
+    position: relative;
+    /*opacity: 0.80;*/
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -121,6 +133,35 @@ nav{
     padding: 20px;
     display: inline-block;
     vertical-align: top;
+    text-align: center;
+}
+
+.iconcontainer {
+    /*margin-left: 30%;*/
+}
+
+.logo {
+    height: 50px;
+    padding: 10px;
+    display: inline-block;
+    opacity: 0.60;
+}
+
+.logo:hover{
+    opacity: 1;
+}
+
+.choosebox{
+    display: block;
+    margin:50px auto;
+    padding: 20px;
+    /*border: 1px solid black;*/
+    /*box-shadow: 10px 10px 10px gray;*/
+}
+
+.boxdesc {
+    display: inline-block;
+    margin: auto;
 }
 
 
