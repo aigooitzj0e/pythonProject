@@ -65,7 +65,7 @@ nav{
 }
 
 .pimg1 {
-    background-image: url('../img/img1.jpg');
+    background-image: url('../img/banner1.jpg');
     min-height: 100%;
     position: relative;
     /*opacity: 0.70;*/
@@ -132,7 +132,7 @@ nav{
 /*Will CSS*/
 #show {
     display: show;
-    
+
 }
 #title_border {
     font-family: sans-serif;
@@ -151,7 +151,7 @@ nav{
     text-align: center;
     right: 5px;
     top:5px;
-    
+
 }
 
 #popup_close p {
