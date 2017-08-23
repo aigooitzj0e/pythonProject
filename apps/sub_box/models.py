@@ -11,13 +11,13 @@ class UserManager(models.Manager):
 	def RegValid(self, postData):
 		errors ={}
 		if len(postData['first_name'])< 2:
-			errors['name']="Name must be at least 3 characters!"
+			errors['first_name']="Name must be at least 3 characters!"
 		elif not re.match(NAME_REGEX, postData['first_name']):
-			errors['name']="Name must be letter characters only"
+			errors['first_name']="Name must be letter characters only"
 		if len(postData['last_name'])< 2:
-			errors['name']="Name must be at least 3 characters!"
+			errors['last_name']="Name must be at least 3 characters!"
 		elif not re.match(NAME_REGEX, postData['last_name']):
-			errors['name'] = "Name must be letter characters only"
+			errors['last_name'] = "Name must be letter characters only"
 
 		if len(postData['bday'])<22:
 			errors['bday'] = "Must be 21 and over."
@@ -73,9 +73,13 @@ class PlanManager(models.Manager):
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
+<<<<<<< HEAD
 	bday = models.DateField(null=T
 
 	rue)
+=======
+	bday = models.DateField(null=True)
+>>>>>>> 548b94a15fd7e8de10599dfa8aef24ddfa84a7d8
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
 	created_at = models.DateTimeField(auto_now_add=True)
