@@ -42,7 +42,7 @@ class UserManager(models.Manager):
 			new_user=User.objects.create(
 				first_name=postData['first_name'],
 				last_name=postData['last_name'],
-				birthdate=postData['bday'],
+				bday=postData['bday'],
 				email=postData['email'],
 				password=hash1,
 				
@@ -51,7 +51,9 @@ class UserManager(models.Manager):
 		return errors
 
 class User(models.Model):
-	name  = models.CharField(max_length=255)
+	first_name  = models.CharField(max_length=255)
+	last_name = models.CharField(max_length=255)
+	bday = models.DateField()
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
 	created_at = models.DateTimeField(auto_now_add=True)
