@@ -5,4 +5,6 @@ urlpatterns = [
     url(r'^logout$', views.logout),
 	url(r'^login$', views.login),
 	url(r'^register$', views.register),
+	url(r'^unsubscribe$', views.unsubscribe),
+
 ]
