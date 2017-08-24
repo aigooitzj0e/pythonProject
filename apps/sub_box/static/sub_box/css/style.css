@@ -11,6 +11,8 @@ body, html {
 
 nav ul{
     list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
 }
 
 nav li{
@@ -29,14 +31,16 @@ nav{
     z-index: 20;
 }
 
-<<<<<<< HEAD
-=======
+.green{
+    color: rgb(0, 200, 127);
+}
+
 .logo1{
     display: inline-block;
     height: 50px;
 }
 
->>>>>>> 824431cc052aad1cf6c7f0429e453500b4d6060f
+
 #login {
     /*float: left;*/
 }
@@ -122,8 +126,7 @@ nav{
     box-shadow: 10px 10px 10px gray;
 }
 
-<<<<<<< HEAD
-=======
+
 .howitworks {
     width: 46%;
     padding: 20px;
@@ -155,9 +158,16 @@ nav{
     /*box-shadow: 10px 10px 10px gray;*/
 }
 
+#boxdesc-container {
+    width: 60%;
+    margin: auto;
+}
+
 .boxdesc {
     display: inline-block;
-    margin: auto;
+    padding: 20px;
+    width: 40%;
+    margin-left: 30px;
 }
 
 
@@ -166,7 +176,7 @@ nav{
 
 
 
->>>>>>> 824431cc052aad1cf6c7f0429e453500b4d6060f
+
 /*Will CSS*/
 #show {
     display: show;
@@ -191,6 +201,7 @@ nav{
     width: 100%;
     height: 100%;
     border-radius: 5px;
+    /*visibility: hidden;*/
 
 
 }
@@ -232,7 +243,9 @@ nav{
     font-weight:bold;
 
 
+
 }*/
+
 
 
 /* Romo CSS */

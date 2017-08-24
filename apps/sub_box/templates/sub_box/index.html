@@ -16,6 +16,7 @@
                 <li><a class="nbl" href="#">How it Works</a></li>
                 <li><a class="nbl" href="#">Contact</a></li>
                 <li id="login"><a href="/member" class="nbl" onclick="openPopupMenu()">Login</a></li>
+                <!-- Need to push login to the right -->
             </ul>
         </nav>
 
@@ -62,20 +63,23 @@
 
         <img class="choosebox" src="../static/sub_box/img/boximg3.jpg" height="350px" alt="Logo2">
 
-        <div class="boxdesc">
-            <h2>Indica</h2>
-        </div>
+        <div id="boxdesc-container">
+            <section class="boxdesc">
+                <p>Effects: Tends to be a sedating and relaxing, full-body experience.</p>
+                <p>Helps with: Anxiety, insomnia, pain, and muscle spasms.</p>
+            </section>
 
-        <div class="boxdesc">
-            <h2>Sativa</h2>
+            <section class="boxdesc">
+                <p>Effects: Tends to be a uplifting and creative experience that has a cerebrally-focused effect.</p>
+                <p>Helps with: Depression, ADD, fatigue, and mood disorders.</p>
+            </section>
         </div>
-
 
 
 
         <!-- FORM STARTS HERE -->
 
-        <div id="popup-bg">
+        <!-- <div id="popup-bg">
 	        <div id="popup_main">
     			<button id="popup_close" title="Close" onclick="closePopupMenu()">X</button>
 	    		<h3 id="title_border">Login</h3>
@@ -114,6 +118,6 @@
 	    	function closePopupMenu() {
 	    		popupDiv.style.display ="none";
 	    	}
-	    </script>
+	    </script> -->
     </body>
 </html>
