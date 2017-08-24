@@ -13,6 +13,7 @@ nav ul{
     list-style-type: none;
     display: inline-block;
     vertical-align: top;
+    /*margin: 0;*/
 }
 
 nav li{
@@ -40,7 +41,7 @@ nav{
 }
 
 .logo1{
-    display: inline-block;
+    /*display: fixed;*/
     height: 50px;
 }
 
@@ -187,7 +188,6 @@ nav{
 
 .messages{
     font-size: 14px;
-
 }
 
 #hybrid_box h1 {
@@ -196,14 +196,14 @@ nav{
     width:100%;
     margin:auto;
     font-size: 35px;
-    font-stretch: 
-    
+    font-stretch:
+
 }
 
 #hybrid_box {
     width:100%;
     margin:auto;
-    
+
 }
 
 #boxdesc2 {
@@ -271,25 +271,24 @@ nav{
   /*  cursor: pointer;*/
 
 }
-/*
-#popup_close p {
-    margin-top:5px;
-    font-family: sans-serif;
-    font-weight:bold;
 
 
 
-}*/
 
 
 
 /* Romo CSS */
+#member{
+	text-align: center;
+}
+
 .border2{
 	background: #111;
 	color: #fff;
 	padding: 20px;
 	opacity: 0.70;
 	letter-spacing: 1.5px;
+
 }
 #themepic{
 	background-image: url('../img/smoke.jpg');
@@ -307,7 +306,6 @@ nav{
 	margin-top: 180px;
 	color: white;
 	display: inline-block;
-	border: 2px solid black;
 	padding: 10px;
 	background: black;
 	opacity: .8;
@@ -317,53 +315,49 @@ nav{
 }
 .strains {
     list-style-type:none;
-
+	font-size: 2em;
+	letter-spacing: 2px;
+	margin-left: -5%;
 }
 
 .strains li {
     width:100px;
     height:40px;
-    position:relative;
 	display: inline-block;
+	padding: 0px 25px;
 }
 
 .strains label, .strains input {
     display:block;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
 }
 
 .strains input[type="radio"] {
     opacity:0.01;
-    z-index:100;
 }
 
 .strains input[type="radio"]:checked + label,
 .checked + label {
 	display: inline-block;
-    background: yellow;
+    color: rgb(0, 200, 127);
 }
 
 .strains label {
-     padding:5px;
-     border:1px solid #CCC;
-     cursor:pointer;
-    z-index:90;
+	padding:5px;
+	cursor:pointer;
 }
+
 #welcome{
 	text-align: center;
-	margin: 6% 0% 10% 0%;
+	margin: 6% 0% 8% 0%;
 	font-size: 4em;
-	letter-spacing: 7px;
+	letter-spacing: 10px;
 	text-transform: uppercase;
 }
 .container {
   width: 24px;
   height: 24px;
-  margin: -25% 0% 20% 94%;
+  top: 85%;
+  left: 90%;
   position: fixed;
 }
 
@@ -391,15 +385,17 @@ nav{
   top: 0;
   height: 100%;
   width: 51%;
-  background: black;
+  background: #00C87F;
 }
 
 .chevron:before {
+  background-color: rgb(0, 200, 127);
   left: 0;
   transform: skew(0deg, 30deg);
 }
 
 .chevron:after {
+  background-color: rgb(0, 200, 127);
   right: 0;
   width: 50%;
   transform: skew(0deg, -30deg);
@@ -430,7 +426,7 @@ nav{
   margin-left: -30px;
   font-family: "Lato", Arial, sans-serif;
   font-size: 12px;
-  color: #black;
+  color: rgb(0, 200, 127);
   text-transform: uppercase;
   white-space: nowrap;
   opacity: .25;
@@ -441,4 +437,54 @@ nav{
   to {
     opacity: 1;
   }
+}
+#changePlan{
+	display: inline;
+	padding: 10px 15px;
+	letter-spacing: 2px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	font-weight: 300;
+	background: black;
+	opacity: .7;
+}
+#strainform{
+	margin-top: 5%;
+}
+#buttonstrain{
+	background: black;
+	padding: 10px 20px;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	box-shadow: none;
+	border: 0px;
+
+}
+#strainpics{
+	background-image: url('../img/acapulcogold.jpg');
+	height: 100px;
+    min-height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	padding: 250px;
+}
+#unsuscribem{
+	box-shadow: none;
+	border: 0px;
+	background: white;
+	text-transform: uppercase;
+	margin-left: -95%;
+}
+#suslink{
+	text-decoration: none !important;
+	color: grey !important;
+}
+#choices{
+	margin-bottom: -7px;
 }
