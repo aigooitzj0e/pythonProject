@@ -33,14 +33,15 @@
 }
 
 .modal_main {
-	width: 50%;
-	height: 400px;
+	width: 25%;
+	padding-bottom: 10px;
+	/*height: 330px;*/
 	background: #fff;
 	z-index: 4;
 	position: fixed;
 	top: 16%;
 	border-radius: 4px;
-	left: 24%;
+	left: 36%;
 	display: none;
 	-webkit-animation-duration: .5s;
 	-webkit-animation-delay: .0s;
@@ -62,12 +63,84 @@
 	}
 }
 
-button {
-	padding: 20px;
+.button {
+	padding: 10px;
 	border-radius: 5px;
-	background: #3399cc;
+	background: rgb(0, 200, 127);
 	border: none;
-	font-size: 20px;
+	font-size: 1em;
 	color: #fff;
-	margin: 8%;
+	margin-left: 40%;
+	margin-top: 10%;
+	margin-bottom: 10%
+
+}
+
+#log_form {
+	padding:0 15%;
+}
+
+.log_p {
+	letter-spacing: 3px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.log_h3 {
+	letter-spacing: 4px;
+	text-align: center;
+}
+
+.log_acc {
+	display: inline;
+	font-size: 0.9em;
+	margin-left: 35px;
+}
+
+
+
+
+/*Registration Modal*/
+
+.call_reg_modal{
+	position: absolute;
+	top: 25%;
+	left: 92%;
+	color: white;
+	text-decoration: none;
+	letter-spacing: 3px;
+}
+
+
+
+.reg_modal {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	display: none;
+}
+
+.reg_modal_main {
+	width: 25%;
+	/*height: 330px;*/
+	padding-bottom: 10px;
+	background: #fff;
+	z-index: 4;
+	position: fixed;
+	top: 16%;
+	border-radius: 4px;
+	left: 36%;
+	display: none;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-delay: .0s;
+	-webkit-animation-fill-mode: both;
+	-moz-animation-fill-mode: both;
+	-o-animation-fill-mode: both;
+	-webkit-backface-visibility: visible!important;
+	-webkit-animation-name: fadeInRight;
+}
+
+.red {
+	color: red;
 }

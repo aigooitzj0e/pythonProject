@@ -3,7 +3,8 @@
 
 <head>
     <title>7Leaves</title>
-    <meta charset="utf-8"> {% load staticfiles %}
+    <meta charset="utf-8">
+    {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
     <link rel="stylesheet" href="{% static 'sub_box/css/loginModal.css' %}" title="Login">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -17,7 +18,7 @@
             <ul>
                 <li><a class="nbl" href="#">Home</a></li>
                 <li><a class="nbl" href="#sec1">About Us</a></li>
-                <li><a class="nbl" href="#">How it Works</a></li>
+                <li><a class="nbl" href="#sec2">How it Works</a></li>
                 <li><a class="nbl" href="#">Contact</a></li>
             </ul>
             <!-- LOGIN / MODAL START -->
@@ -25,10 +26,13 @@
             <div class="modal">
                 <div class="modal_close close"></div>
                 <div class="modal_main">
-                    <img src="../../static/sub_box/img/closebtn.png" class="close" style="margin-top:13px;left:96%;position:fixed;">
+                    <img src="../../static/sub_box/img/closebtn.png" class="close" style="margin-top:13px;left:93%;position:fixed;">
 
-                    <form method="POST" action="/login">
-    	    		<h1>Welcome!</h1>
+                    <p class="log_p">LOGIN</p>
+                    <hr>
+
+                    <form id="log_form" method="POST" action="/login">
+    	    		<h3 class="log_h3">WELCOME</h3>
     	    		{% csrf_token %}
     	    		<table>
     	    			<tbody>
@@ -41,6 +45,63 @@
     	    					<td><input id="password" type="password" name="password" value=""></td>
     	    				</tr>
     	    			</tbody>
+        	    		{% if messages %}
+                		<div class="messages">
+                  		 	{% for message in messages %}
+                    		<p class="red">{{ message }}</p>
+                    		{% endfor %}
+                		</div>
+                		{% endif %}
+    	    		</table>
+    	    		<input class="button" type="submit" value="Login">
+    	    		</form>
+
+                    <hr>
+                    <p class="log_acc">Don't have an account? </p>
+    	    		<a class="reg_change" style="cursor:pointer;"><span class="green">Register Here</span></a>
+
+                </div>
+            </div>
+
+            <!-- Register MODAL -->
+
+            <div class="reg_modal">
+                <div class="modal_close close"></div>
+                <div class="reg_modal_main">
+                    <img src="../../static/sub_box/img/closebtn.png" class="reg_close" style="margin-top:13px;left:93%;position:fixed;">
+
+                    <p class="log_p">REGISTER</p>
+                    <hr>
+
+                    <form id="log_form" method="POST" action="/register">
+    	    		{% csrf_token %}
+    	    		<table>
+    	    			<tbody>
+                            <tr>
+    	    					<td>First Name:</td>
+    	    					<td><input type="text" id="first_name" name="first_name" value=""></td>
+    	    				</tr>
+                            <tr>
+    	    					<td>Last Name:</td>
+    	    					<td><input type="text" id="last_name" name="last_name" value=""></td>
+    	    				</tr>
+                            <tr>
+    	    					<td>Birthday:</td>
+    	    					<td><input type="date" id="birthday" name="bday" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Email:</td>
+    	    					<td><input id="email" type="email" name="email" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Password:</td>
+    	    					<td><input id="password" type="password" name="password" value=""></td>
+    	    				</tr>
+                            <tr>
+            					<td>Confirm:</td>
+            					<td><input id="password" type="password" name="confirm"></td>
+            				</tr>
+    	    			</tbody>
     	    		{% if messages %}
             		<div class="messages">
               		 	{% for message in messages %}
@@ -49,12 +110,13 @@
             		</div>
             		{% endif %}
     	    		</table>
-    	    		<input class="button" type="submit" value="Login">
+    	    		<input class="button" type="submit" value="Register">
     	    		</form>
-    	    		<a href="/main">Register Here</a>
+
 
                 </div>
             </div>
+
         </nav>
     </div>
 
@@ -72,14 +134,14 @@
         <img class="about_us_pic" src="../static/sub_box/img/boximg2.jpg" height="300" alt="box pic">
 
         <section id="sec1" class="section">
-            <h2><span class="red">Our Vision</span></h2>
+            <h2><span class="green">Our Vision</span></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium
                 officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga quia totam delectus commodi, et id? Hic tempora mollitia totam odit impedit fugiat, harum dolores blanditiis aliquam
                 exercitationem eius tenetur, amet ad est autem maiores nulla sunt unde quas recusandae voluptatem! Iure numquam totam sed, error consequuntur temporibus natus facilis beatae est quidem, quibusdam ducimus aut ipsa debitis libero accusantium
                 quae! Esse modi, magni! Voluptatibus!</p>
         </section>
 
-        <h1 class="centerh1">How it Works</h1>
+        <h1 id="sec2" class="centerh1">How it Works</h1>
 
         <section class="section howitworks">
             <h2>What's in the box?</h2>
@@ -119,29 +181,25 @@
         </section>
     </div>
 
-            <section class="boxdesc">
-                <p><span class="red">Effects:</span> Tends to be an uplifting and creative experience that has a cerebrally-focused effect.</p>
-                <p><span class="red">Helps with:</span> Depression, ADD, fatigue, and mood disorders.</p>
-            </section>
-        </div>
-        <div id="hybrid_box">
-        	<section id="boxdesc2">
-        		<h1 class="green">HYBRID</h1>
-        		<p>Hybrids are a combination of both Indica and Sativa strains through the breeding process. Hybrids usually have the most favorable aspects of each parent strain. The dominant traits of the strain can vary, which means it could be sativa or indica dominant, or right in the middle. </p>
-            </section>
-        </div>
-        <div>
-        <h3>Last Month's Stash:</h3>
-        	<ul>
-        		<li>Green Crack</li>
-        		<li>Twisty Pipe</li>
-        		<li>Grinder</li>
-        		<li>Papers</li>
-        		<li>Lighter</li>
-        		<li>Chips</li>
-        	</ul>
-        </div>
-        <img class="logo" src="#" alt="last_month">
+
+    <div id="hybrid_box">
+    	<section id="boxdesc2">
+    		<h1 class="green">HYBRID</h1>
+    		<p>Hybrids are a combination of both Indica and Sativa strains through the breeding process. Hybrids usually have the most favorable aspects of each parent strain. The dominant traits of the strain can vary, which means it could be sativa or indica dominant, or right in the middle. </p>
+        </section>
+    </div>
+    <div>
+    <h3>Last Month's Stash:</h3>
+    	<ul>
+    		<li>Green Crack</li>
+    		<li>Twisty Pipe</li>
+    		<li>Grinder</li>
+    		<li>Papers</li>
+    		<li>Lighter</li>
+    		<li>Chips</li>
+    	</ul>
+    </div>
+    <img class="logo" src="#" alt="last_month">
 
 
     </body>

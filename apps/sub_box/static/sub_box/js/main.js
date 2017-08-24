@@ -11,6 +11,19 @@ $(document).ready(function() {
 		$(".modal_main").fadeOut();
 	});
 
+// Register MODAL
+
+	$(".reg_change").click(function() {
+		$(".modal").fadeOut();
+		$(".modal_main").fadeOut();
+		$(".reg_modal").delay(500).fadeIn();
+		$(".reg_modal_main").show();
+	});
+	$(".reg_close").click(function() {
+		$(".reg_modal").fadeOut();
+		$(".reg_modal_main").fadeOut();
+	});
+
 // Add Logo Hovers Here
 
 
