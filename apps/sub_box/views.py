@@ -10,16 +10,21 @@ from django.contrib import messages
 def index(request):
 	return render(request, 'sub_box/index.html')
 
+def main(request):
+	return render(request, 'sub_box/register.html')
 
 def login(request):
 	errors=User.objects.LoginValid(request.POST)
 	if type(errors) ==dict:
-		for error in errors.itervalues():
-			messages.error(request, error)
+		for field, error in errors.iteritems():
+			messages.error(request, error, extra_tags=field)
 		return redirect('/') #Must redirect to pop up login
 	request.session['user_id']=errors
 	messages.success(request, "You are logged in!")
 	return redirect('/member')
+
+
+
 
 def register(request):
 	errors=User.objects.RegValid(request.POST)
