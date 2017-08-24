@@ -159,9 +159,16 @@ nav{
     /*box-shadow: 10px 10px 10px gray;*/
 }
 
+#boxdesc-container {
+    width: 60%;
+    margin: auto;
+}
+
 .boxdesc {
     display: inline-block;
-    margin: auto;
+    padding: 20px;
+    width: 40%;
+    margin-left: 30px;
 }
 
 
@@ -194,7 +201,8 @@ nav{
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    
+    /*visibility: hidden;*/
+
 
 }
 
@@ -233,7 +241,7 @@ nav{
     margin-top:5px;
     font-family: sans-serif;
     font-weight:bold;
-   
+
 
 }*/
 
