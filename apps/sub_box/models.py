@@ -19,7 +19,6 @@ class UserManager(models.Manager):
 		elif not re.match(NAME_REGEX, postData['last_name']):
 			errors['last_name'] = "Name must be letter characters only"
 
-
 		try:
 			postData['bday']
 			bday= datetime.datetime.strptime(postData['bday'], "%Y-%m-%d")
@@ -77,15 +76,43 @@ class UserManager(models.Manager):
 				return errors
 			return user.id
 
+	def SubValid(self,postData):
+			errors ={}
+
+			if len(postData['subscribe']):
+				subscribe=User.objects.create(
+					subscribe=postData['subscribe'],
+				)
+				return subscribe.id
+			if errors:
+				return errors
+			else:
+				User.objects.get(id=id).update(subscribe=True)
+
 class PlanManager(models.Manager):
 	def PlanValid(self, postData, id):
-		# errors = {}
-		# if len(postData['strain']) #get strain
+		errors = {}
+		if len(postData['strain']): #get strain
+			strain=Plan.objects.create(
+				strain=postData['strain'],
+
+			)
 		pass
+
+	def UnsubValid(self, postData):
+		# choice ={}
+		# if len(postData['yes']):
+		# 	Plan.objects.filter(subscribed__id=id).delete()
+		# elif len(postData['no']):
+		# 	return choice
+
+
+
 
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
+	subscribe = models.BooleanField(default=False)
 	bday = models.DateField(null=True)
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
