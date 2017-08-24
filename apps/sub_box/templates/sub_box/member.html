@@ -6,24 +6,9 @@
 	<title>Member</title>
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-
-			$('input[type="radio"]').hover(function(){
-				  $("#strainpics").css("background-color", "yellow");
-			  }, function(){
-				  $("#strainpics").css('background-color', "yellow");
-			  })
-
-
-
-
-
-
-
-		});
-	</script>
+	<link rel="stylesheet" href="{% static 'sub_box/css/button.css' %}" title="Login">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../static/sub_box/js/main.js"></script>
 </head>
 
 <body>
@@ -44,12 +29,7 @@
 	</div>
 	<div id="member">
 		<h3 id="welcome">Welcome {{ User.name }}!</h3>
-
-		<h2 id="changePlan">Change your plan: {{plan.strain}}</h2>
-
-
 		<form id="strainform" action="#">
-			<p>Click on your Choice to view</p>
 			<ul class="strains">
 				<li>
 					<input id="Indica" type='radio' value='Indica' name='strain' />
@@ -64,11 +44,15 @@
 					<label for='Hybrid'>HYBRID</label>
 				</li>
 			</ul>
+			<p id="choices"><span class="red">Click </span> on your Choice to view</p>
 			<div id="strainpics">
-			<button id="picsstrain" type="submit" name="submit">Add to Cart!</button>
+				<h2 id="changePlan"><span class="green">Change </span> your plan: {{plan.strain}}</h2>
 			</div>
+			<button id="buttonstrain" type="submit" name="submit">
+				<span class="green">Add </span> to cart!
+			</button>
 		</form>
-		<button type="button" name="unsuscribe"><a href="#">Unsuscribe!</a></button>
+		<button id="unsuscribem" type="button" name="unsuscribe"><a href="#" id="suslink">Unsuscribe</a></button>
 		<div class="container">
 			<div class="chevron"></div>
 			<div class="chevron"></div>

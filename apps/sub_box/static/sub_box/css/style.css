@@ -307,7 +307,6 @@ nav{
 	margin-top: 180px;
 	color: white;
 	display: inline-block;
-	border: 2px solid black;
 	padding: 10px;
 	background: black;
 	opacity: .8;
@@ -331,7 +330,6 @@ nav{
 
 .strains label, .strains input {
     display:block;
-	padding: 0 10px;
 }
 
 .strains input[type="radio"] {
@@ -348,6 +346,7 @@ nav{
 	padding:5px;
 	cursor:pointer;
 }
+
 #welcome{
 	text-align: center;
 	margin: 6% 0% 8% 0%;
@@ -358,13 +357,8 @@ nav{
 .container {
   width: 24px;
   height: 24px;
-<<<<<<< HEAD
-  margin: -34% 0% 20% 94%;
-=======
   top: 85%;
   left: 90%;
-  /*margin: -25% 0% 20% 94%;*/
->>>>>>> 8a0b814978c012e20986d8f139324eb92cb2a71c
   position: fixed;
 }
 
@@ -447,24 +441,51 @@ nav{
 }
 #changePlan{
 	display: inline;
-	padding: 20px;
-	box-shadow: 10px 10px 10px gray;
+	padding: 10px 15px;
 	letter-spacing: 2px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	font-weight: 300;
+	background: black;
+	opacity: .7;
 }
 #strainform{
-	padding: 30px;
-	border: 2px solid black;
 	margin-top: 5%;
 }
-#picsstrain{
-	background: white;
+#buttonstrain{
+	background: black;
 	padding: 10px 20px;
-	color: black;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	box-shadow: none;
+	border: 0px;
 
 }
 #strainpics{
-	background: black;
-	width: 100%;
-	height: 400px;
-	padding-top: 240px;
+	background-image: url('../img/acapulcogold.jpg');
+	height: 100px;
+    min-height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	padding: 250px;
+}
+#unsuscribem{
+	box-shadow: none;
+	border: 0px;
+	background: white;
+	text-transform: uppercase;
+	margin-left: -95%;
+}
+#suslink{
+	text-decoration: none !important;
+	color: grey !important;
+}
+#choices{
+	margin-bottom: -7px;
 }
