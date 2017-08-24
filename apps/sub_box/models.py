@@ -1,8 +1,8 @@
 
 from __future__ import unicode_literals
 from django.db import models
-import datetime
-import bcrypt, re
+from datetime import date
+import bcrypt, re, datetime
 EMAIL_REGEX=re.compile(r'^[a-zA-Z0-9+._-]+@[a-zA-Z0-9+._-]+\.[a-zA-Z]+$')
 NAME_REGEX=re.compile(r'^[A-Za-z]\w+$')
 # Create your models here.
@@ -19,10 +19,23 @@ class UserManager(models.Manager):
 		elif not re.match(NAME_REGEX, postData['last_name']):
 			errors['last_name'] = "Name must be letter characters only"
 
-		if len(postData['bday'])<22:
-			errors['bday'] = "Must be 21 and over."
-		elif datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
-			errors['bday'] = "The date cannot be in the future"
+
+		try:
+			postData['bday']
+			bday= datetime.datetime.strptime(postData['bday'], "%Y-%m-%d")
+			min_age= datetime.timedelta(weeks =52*21)
+			if datetime.datetime.now() - bday <min_age:
+				errors['bday'] = "You must be 21 to join"
+
+		except:
+			pass
+
+		if postData['bday']:
+
+			if len(postData['bday'])<1:
+				errors['bday'] = "Must enter birthdate"
+			if datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
+				errors['bday'] = "The date cannot be in the future"
 
 		if len(postData['email'])<1:
 			errors['email'] = "Email cannot be blank!"

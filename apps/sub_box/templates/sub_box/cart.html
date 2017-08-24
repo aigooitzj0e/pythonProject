@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Cart</title>
+   <meta charset="utf-8">
+ 	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Registration">
+</head>
+<body>
+<!-- we can use the line below to see all of our data in our template -->
+	<h1>Welcome!</h1>
+	<div id="register">
+		<h3>Cart</h3>
+		{% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+ 		<form method="POST" action="/subscribe">
+ 		{% csrf_token %}
+ 		<table>
+                <thead>
+                    <tr>
+                        <td>Item</td>
+                        <td>Price</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td><a href="show/{{ item.id }}">{{ item.name }}</a></td>
+                        <td>{{ item.users.name }}</td>
+                        <td>{{ item.created_at }}</td>
+                        <td><a href="wish_items/{{ item.id }}">Add to my Wishlist</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+		<input class="button" type="submit" value="Register">	
+		</form>
+  	</div>
+</body>
+</html>
