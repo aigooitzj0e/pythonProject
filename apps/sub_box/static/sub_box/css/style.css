@@ -249,12 +249,17 @@ nav{
 
 
 /* Romo CSS */
+#member{
+	text-align: center;
+}
+
 .border2{
 	background: #111;
 	color: #fff;
 	padding: 20px;
 	opacity: 0.70;
 	letter-spacing: 1.5px;
+
 }
 #themepic{
 	background-image: url('../img/smoke.jpg');
@@ -282,53 +287,48 @@ nav{
 }
 .strains {
     list-style-type:none;
-
+	font-size: 2em;
+	letter-spacing: 2px;
+	margin-left: -5%;
 }
 
 .strains li {
     width:100px;
     height:40px;
-    position:relative;
 	display: inline-block;
+	padding: 0px 25px;
 }
 
 .strains label, .strains input {
     display:block;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+	padding: 0 10px;
 }
 
 .strains input[type="radio"] {
     opacity:0.01;
-    z-index:100;
 }
 
 .strains input[type="radio"]:checked + label,
 .checked + label {
 	display: inline-block;
-    background: yellow;
+    color: rgb(0, 200, 127);
 }
 
 .strains label {
-     padding:5px;
-     border:1px solid #CCC;
-     cursor:pointer;
-    z-index:90;
+	padding:5px;
+	cursor:pointer;
 }
 #welcome{
 	text-align: center;
-	margin: 6% 0% 10% 0%;
+	margin: 6% 0% 8% 0%;
 	font-size: 4em;
-	letter-spacing: 7px;
+	letter-spacing: 10px;
 	text-transform: uppercase;
 }
 .container {
   width: 24px;
   height: 24px;
-  margin: -25% 0% 20% 94%;
+  margin: -34% 0% 20% 94%;
   position: fixed;
 }
 
@@ -406,4 +406,27 @@ nav{
   to {
     opacity: 1;
   }
+}
+#changePlan{
+	display: inline;
+	padding: 20px;
+	box-shadow: 10px 10px 10px gray;
+	letter-spacing: 2px;
+}
+#strainform{
+	padding: 30px;
+	border: 2px solid black;
+	margin-top: 5%;
+}
+#picsstrain{
+	background: white;
+	padding: 10px 20px;
+	color: black;
+
+}
+#strainpics{
+	background: black;
+	width: 100%;
+	height: 400px;
+	padding-top: 240px;
 }
