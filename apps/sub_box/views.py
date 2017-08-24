@@ -33,7 +33,7 @@ def register(request):
 	if type(errors)==dict:
 		for error in errors.itervalues():
 			messages.error(request, error)
-		return redirect('/')
+		return redirect('/main')
 	request.session['user_id']=errors
 	messages.success(request, "You are registered!")
 	return redirect('/member')
