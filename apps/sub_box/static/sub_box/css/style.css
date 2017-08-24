@@ -35,6 +35,10 @@ nav{
     color: rgb(0, 200, 127);
 }
 
+.red{
+    color: rgb(167, 0, 0);
+}
+
 .logo1{
     display: inline-block;
     height: 50px;
@@ -110,6 +114,10 @@ nav{
 
 }
 
+.centerh1{
+    text-align: center;
+}
+
 #about_us {
     width: 1200px;
     margin: 0 auto;
@@ -168,6 +176,7 @@ nav{
     padding: 20px;
     width: 40%;
     margin-left: 30px;
+    text-align: center;
 }
 
 
