@@ -1,5 +1,4 @@
 /*Joes CSS*/
-
 body, html {
     height: 100%;
     margin:0;
@@ -12,8 +11,6 @@ body, html {
 
 nav ul{
     list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
 }
 
 nav li{
@@ -21,6 +18,7 @@ nav li{
     margin-right: 20px;
     position: relative;
 }
+
 
 nav{
     /*overflow: hidden;*/
@@ -31,10 +29,15 @@ nav{
     z-index: 20;
 }
 
+.green{
+    color: rgb(0, 200, 127);
+}
+
 .logo1{
     display: inline-block;
     height: 50px;
 }
+
 
 #login {
     /*float: left;*/
@@ -92,24 +95,17 @@ nav{
     top: 50%;
     width: 100%;
     text-align: center;
-
+    color: white;
     font-size: 27px;
     letter-spacing: 8px;
 }
 
 .border{
     background-color: #111;
-    color: white;
+    color: #fff;
     padding: 20px;
     opacity: 0.80;
-}
 
-.green {
-    color: #00c87f;
-}
-
-.centerh1 {
-    text-align: center;
 }
 
 #about_us {
@@ -127,6 +123,7 @@ nav{
 .about_us_pic {
     box-shadow: 10px 10px 10px gray;
 }
+
 
 .howitworks {
     width: 46%;
@@ -170,6 +167,7 @@ nav{
     width: 40%;
     margin-left: 30px;
 }
+
 
 
 
@@ -243,22 +241,53 @@ nav{
     font-weight:bold;
 
 
+
 }*/
 
 
+
 /* Romo CSS */
+.border2{
+	background: #111;
+	color: #fff;
+	padding: 20px;
+	opacity: 0.70;
+	letter-spacing: 1.5px;
+}
+#themepic{
+	background-image: url('../img/smoke.jpg');
+	min-height: 65%;
+	position: relative;
+	opacity: 0.9;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding-top: 70px;
+	text-align: center;
+}
+#theme{
+	margin-top: 180px;
+	color: white;
+	display: inline-block;
+	border: 2px solid black;
+	padding: 10px;
+	background: black;
+	opacity: .8;
+	border-radius: 5px;
+	letter-spacing: 2px;
+
+}
 .strains {
-     list-style-type:none;
-     margin:25px 0 0 0;
-     padding:0;
+    list-style-type:none;
+
 }
 
 .strains li {
-     float:left;
-     margin:0 5px 0 0;
     width:100px;
     height:40px;
     position:relative;
+	display: inline-block;
 }
 
 .strains label, .strains input {
@@ -277,7 +306,8 @@ nav{
 
 .strains input[type="radio"]:checked + label,
 .checked + label {
-    opacity: .7;
+	display: inline-block;
+    background: yellow;
 }
 
 .strains label {
@@ -285,3 +315,93 @@ nav{
      border:1px solid #CCC;
      cursor:pointer;
     z-index:90;
+}
+#welcome{
+	text-align: center;
+	margin: 6% 0% 10% 0%;
+	font-size: 4em;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+}
+.container {
+  width: 24px;
+  height: 24px;
+  margin: -25% 0% 20% 94%;
+  position: fixed;
+}
+
+.chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: black;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  margin-left: -30px;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 12px;
+  color: #black;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: .25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
