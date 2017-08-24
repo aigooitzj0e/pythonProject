@@ -105,6 +105,7 @@ class PlanManager(models.Manager):
 		# 	Plan.objects.filter(subscribed__id=id).delete()
 		# elif len(postData['no']):
 		# 	return choice
+		pass
 
 
 
