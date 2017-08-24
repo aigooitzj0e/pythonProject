@@ -1,123 +1,132 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>7Leaves</title>
-        <meta charset="utf-8">
-		{% load staticfiles %}
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-   	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
-    </head>
-    <body>
+
+<head>
+    <title>7Leaves</title>
+    <meta charset="utf-8"> {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
+    <link rel="stylesheet" href="{% static 'sub_box/css/loginModal.css' %}" title="Login">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../static/sub_box/js/main.js"></script>
+</head>
+
+<body>
+    <div id="nb">
         <nav>
-            <img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo"/>
+            <img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo" />
             <ul>
                 <li><a class="nbl" href="#">Home</a></li>
                 <li><a class="nbl" href="#sec1">About Us</a></li>
                 <li><a class="nbl" href="#">How it Works</a></li>
                 <li><a class="nbl" href="#">Contact</a></li>
-                <li id="login"><a href="/member" class="nbl" onclick="openPopupMenu()">Login</a></li>
-                <!-- Need to push login to the right -->
             </ul>
-        </nav>
+            <!-- LOGIN / MODAL START -->
+            <a class="call_modal" style="cursor:pointer;">LOGIN</a>
+            <div class="modal">
+                <div class="modal_close close"></div>
+                <div class="modal_main">
+                    <img src="../../static/sub_box/img/closebtn.png" class="close" style="margin-top:13px;left:96%;position:fixed;">
 
-        <div class="pimg1">
-            <div class="ptext1">
-                <span class="border">
-                    <span class="green">7</span>LEAVES
-                </span>
+                    <form method="POST" action="/login">
+    	    		<h1>Welcome!</h1>
+    	    		{% csrf_token %}
+    	    		<table>
+    	    			<tbody>
+    	    				<tr>
+    	    					<td>Email:</td>
+    	    					<td><input id="email" type="email" name="email" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Password:</td>
+    	    					<td><input id="password" type="password" name="password" value=""></td>
+    	    				</tr>
+    	    			</tbody>
+    	    		{% if messages %}
+            		<div class="messages">
+              		 	{% for message in messages %}
+                		<p>{{ message }}</p>
+                		{% endfor %}
+            		</div>
+            		{% endif %}
+    	    		</table>
+    	    		<input class="button" type="submit" value="Login">
+    	    		</form>
+    	    		<a href="/main">Register Here</a>
+
+                </div>
             </div>
+        </nav>
+    </div>
+
+
+
+    <div class="pimg1">
+        <div class="ptext1">
+            <span class="border">
+                    <span class="green">7</span>LEAVES
+            </span>
         </div>
+    </div>
 
-        <div id="about_us">
-            <img class="about_us_pic" src="../static/sub_box/img/boximg2.jpg" height="300" alt="box pic">
+    <div id="about_us">
+        <img class="about_us_pic" src="../static/sub_box/img/boximg2.jpg" height="300" alt="box pic">
 
-            <section id="sec1" class ="section">
-                <h2><span class="red">Our Vision</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga quia totam delectus commodi, et id? Hic tempora mollitia totam odit impedit fugiat, harum dolores blanditiis aliquam exercitationem eius tenetur, amet ad est autem maiores nulla sunt unde quas recusandae voluptatem! Iure numquam totam sed, error consequuntur temporibus natus facilis beatae est quidem, quibusdam ducimus aut ipsa debitis libero accusantium quae! Esse modi, magni! Voluptatibus!</p>
-            </section>
+        <section id="sec1" class="section">
+            <h2><span class="red">Our Vision</span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium
+                officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga quia totam delectus commodi, et id? Hic tempora mollitia totam odit impedit fugiat, harum dolores blanditiis aliquam
+                exercitationem eius tenetur, amet ad est autem maiores nulla sunt unde quas recusandae voluptatem! Iure numquam totam sed, error consequuntur temporibus natus facilis beatae est quidem, quibusdam ducimus aut ipsa debitis libero accusantium
+                quae! Esse modi, magni! Voluptatibus!</p>
+        </section>
 
-            <h1 class="centerh1">How it Works</h1>
+        <h1 class="centerh1">How it Works</h1>
 
-            <section class ="section howitworks">
-                <h2>What's in the box?</h2>
-                <p>A random variety of top tier strains along with an accessory to enhance your overall experience.
+        <section class="section howitworks">
+            <h2>What's in the box?</h2>
+            <p>A random variety of top tier strains along with an accessory to enhance your overall experience.
                 <div class="iconcontainer">
                     <img class="logo" src="../static/sub_box/img/icon1.jpg" alt="Logo1">
                     <img class="logo" src="../static/sub_box/img/icon2.jpg" alt="Logo2">
                 </div>
-            </section>
+        </section>
 
-            <section class ="howitworks">
-                <h2>Top Tier</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga </p>
-            </section>
-        </div>
+        <section class="howitworks">
+            <h2>Top Tier</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium
+                officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga </p>
+        </section>
+    </div>
 
-        <div class="pimg2">
-            <div class="ptext1">
-                <span class="border">
+    <div class="pimg2">
+        <div class="ptext1">
+            <span class="border">
                     CHOOSE YOUR <span class="green">BOX</span>
-                </span>
-            </div>
+            </span>
         </div>
+    </div>
 
-        <img class="choosebox" src="../static/sub_box/img/boximg3.jpg" height="350px" alt="Logo2">
+    <img class="choosebox" src="../static/sub_box/img/boximg3.jpg" height="350px" alt="Logo2">
 
-        <div id="boxdesc-container">
-            <section class="boxdesc">
-                <p><span class="red">Effects:</span> Tends to be a sedating and relaxing, full-body experience.</p>
-                <p><span class="red">Helps with:</span> Anxiety, insomnia, pain, and muscle spasms.</p>
-            </section>
+    <div id="boxdesc-container">
+        <section class="boxdesc">
+            <p><span class="red">Effects:</span> Tends to be a sedating and relaxing, full-body experience.</p>
+            <p><span class="red">Helps with:</span> Anxiety, insomnia, pain, and muscle spasms.</p>
+        </section>
 
-            <section class="boxdesc">
-                <p><span class="red">Effects:</span> Tends to be an uplifting and creative experience that has a cerebrally-focused effect.</p>
-                <p><span class="red">Helps with:</span> Depression, ADD, fatigue, and mood disorders.</p>
-            </section>
-        </div>
+        <section class="boxdesc">
+            <p><span class="red">Effects:</span> Tends to be an uplifting and creative experience that has a cerebrally-focused effect.</p>
+            <p><span class="red">Helps with:</span> Depression, ADD, fatigue, and mood disorders.</p>
+        </section>
+    </div>
 
 
+    <div class="container">
+	  <div class="chevron"></div>
+	  <div class="chevron"></div>
+	  <div class="chevron"></div>
+	  <span class="text">Scroll down</span>
+	</div>
 
-        <!-- FORM STARTS HERE -->
 
-        <!-- <div id="popup-bg">
-	        <div id="popup_main">
-    			<button id="popup_close" title="Close" onclick="closePopupMenu()">X</button>
-	    		<h3 id="title_border">Login</h3>
-	    		<form method="POST" action="/login">
-	    		<h1>Welcome!</h1>
-	    		{% csrf_token %}
-	    		<table>
-	    			<tbody>
-	    				<tr>
-	    					<td>Email:</td>
-	    					<td><input id="email" type="email" name="email" value=""></td>
-	    				</tr>
-	    				<tr>
-	    					<td>Password:</td>
-	    					<td><input id="password" type="password" name="password" value=""></td>
-	    				</tr>
-	    			</tbody>
-	    		{% if messages %}
-        		<div class="messages">
-          		 	{% for message in messages %}
-            		<p>{{ message }}</p>
-            		{% endfor %}
-        		</div>
-        		{% endif %}
-	    		</table>
-	    		<input class="button" type="submit" value="Login">
-	    		</form>
-	    		<a href="/main">Register Here</a>
-			</div>
-		</div>
-	    <script type="text/javascript">
-	    	var popupDiv = document.getElementById("popup_bg");
-	    	function openPopupMenu() {
-	    		popupDiv.style.display = "block";
-	    	}
-	    	function closePopupMenu() {
-	    		popupDiv.style.display ="none";
-	    	}
-	    </script> -->
     </body>
 </html>
