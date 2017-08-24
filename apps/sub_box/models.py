@@ -72,7 +72,7 @@ class UserManager(models.Manager):
 				if not bcrypt.checkpw(postData['password'].encode(),user.password.encode()):
 					errors['password']="Email/Password incorrect"
 			except:
-				errors['loginerror'] = "Incorrect login info. Try again or register an account."
+				errors['login_email'] = "Incorrect login info. Try again or register an account."
 			if errors:
 				return errors
 			return user.id
