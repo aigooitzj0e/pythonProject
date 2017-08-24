@@ -18,7 +18,7 @@
             <ul>
                 <li><a class="nbl" href="#">Home</a></li>
                 <li><a class="nbl" href="#sec1">About Us</a></li>
-                <li><a class="nbl" href="#">How it Works</a></li>
+                <li><a class="nbl" href="#sec2">How it Works</a></li>
                 <li><a class="nbl" href="#">Contact</a></li>
             </ul>
             <!-- LOGIN / MODAL START -->
@@ -79,15 +79,15 @@
     	    			<tbody>
                             <tr>
     	    					<td>First Name:</td>
-    	    					<td><input id="first_name" name="first_name" value=""></td>
+    	    					<td><input type="text" id="first_name" name="first_name" value=""></td>
     	    				</tr>
                             <tr>
     	    					<td>Last Name:</td>
-    	    					<td><input id="last_name" name="last_name" value=""></td>
+    	    					<td><input type="text" id="last_name" name="last_name" value=""></td>
     	    				</tr>
                             <tr>
     	    					<td>Birthday:</td>
-    	    					<td><input id="birthday" name="birthday" value=""></td>
+    	    					<td><input type="date" id="birthday" name="bday" value=""></td>
     	    				</tr>
     	    				<tr>
     	    					<td>Email:</td>
@@ -97,6 +97,10 @@
     	    					<td>Password:</td>
     	    					<td><input id="password" type="password" name="password" value=""></td>
     	    				</tr>
+                            <tr>
+            					<td>Confirm:</td>
+            					<td><input id="password" type="password" name="confirm"></td>
+            				</tr>
     	    			</tbody>
     	    		{% if messages %}
             		<div class="messages">
@@ -137,7 +141,7 @@
                 quae! Esse modi, magni! Voluptatibus!</p>
         </section>
 
-        <h1 class="centerh1">How it Works</h1>
+        <h1 id="sec2" class="centerh1">How it Works</h1>
 
         <section class="section howitworks">
             <h2>What's in the box?</h2>
