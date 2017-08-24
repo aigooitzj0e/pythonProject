@@ -7,7 +7,7 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
 </head>
-<body>
+<body id="member">
 	<nav>
 		<ul>
 			<li><a class="nbl" href="#">Home</a></li>
@@ -18,10 +18,11 @@
 		</ul>
 	</nav>
 	<div id="themepic">
-		<h2>Summer Nights</h2>
-		<h1>Our Theme this Month is:</h1>
+		<span class="border2">
+			<span class="green">THIS </span> MONTHS THEME
+		</span>
 	</div>
-	<h3>Welcome {{ User.name }}! Your plan is:</h3>
+	<h3 id="welcome">Welcome {{ User.name }}!</h3>
 	{% for plan in plans %}
 	<h3>plan.name</h3>
 	{% endfor %}
@@ -48,6 +49,11 @@
 		<input type="submit" name="submit" value="Add to Cart">
 	</form>
 	<button type="button" name="unsuscribe"><a href="#">Unsuscribe!</a></button>
+	<div class="container">
+	  <div class="chevron"></div>
+	  <div class="chevron"></div>
+	  <div class="chevron"></div>
+	  <span class="text">Scroll down</span>
+	</div>
 </body>
-
 </html>
