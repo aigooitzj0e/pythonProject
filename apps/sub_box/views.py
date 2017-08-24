@@ -30,7 +30,7 @@ def register(request):
 	if type(errors)==dict:
 		for error in errors.itervalues():
 			messages.error(request, error)
-		return redirect('/main')
+		return redirect('/')
 	request.session['user_id']=errors
 	messages.success(request, "You are registered!")
 	return redirect('/member')
@@ -53,13 +53,10 @@ def unsubscribe(request):
 	return redirect('/unsubscribe')
 
 def member(request):
-	# errors=User.objects.PlanValid(request.POST)
-	# if type(errors)==dict:
-	# 	for error in errors.itervalues():
-	# 		messages.error(request, error)
-	# 	return redirect('/')
-	# request.session['user_id']=errors
-	# messages.success(request, "You have subscribed!")
+	try: #checks is user is logged in.
+		request.session['user_id']
+	except KeyError:
+		return redirect('/')
 	return render(request, "sub_box/member.html")
 
 def cart(request):
@@ -68,3 +65,6 @@ def cart(request):
 def logout(request):
 	request.session.clear()
 	return redirect('/')
+
+def ordercomplete(request):
+	return render(request, "sub_box/ordercomplete.html")
