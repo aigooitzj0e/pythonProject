@@ -4,6 +4,8 @@
    <meta charset="utf-8">
  	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Registration">
+	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+	<script src="jquery.geocomplete.js"></script>
 </head>
 <body>
 <!-- we can use the line below to see all of our data in our template -->
@@ -47,6 +49,74 @@
 				</tr>
 			</tbody>
 		</table>
+		<div id="jquery-script-menu">
+			<div class="jquery-script-center">
+				<ul>
+					<li><a href="http://www.jqueryscript.net/form/Autocomplete-Address-Form-Using-jQuery-Google-Places-API-LightCheckout.html">Download This Plugin</a></li>
+					<li><a href="http://www.jqueryscript.net/">Back To jQueryScript.Net</a></li>
+				</ul>
+				<div class="jquery-script-ads">
+					<script type="text/javascript"></script>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+				</div>
+				<div class="jquery-script-clear">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h1>jQuery LightCheckout Plugin Example</h1>
+			<form class="addressForm">
+			   <div class="name">
+			     	<input class="form-control" name="name" id="name" type="text" />
+			   </div>
+			   <div class="surname">
+			     	<input class="form-control" name="surname" id="surname" type="text" />
+			   </div>
+			   <div class="address">
+			     	<input class="form-control" name="address" id="address" type="text" />
+			   </div>
+			   <div class="city">
+			   	 	<input class="form-control" name="city" id="city" type="text" />
+			   </div>
+			   <div class="zipcode">
+			      	<input class="form-control" name="zipcode" id="zipcode" type="text" />
+			   </div>
+			   <div class="province">
+				    <input class="form-control" name="province" id="province" type="text" />
+			   </div>
+			   <div class="submit">
+			     	<input class="btn btn-primary" type="submit" value="Continue">
+			   </div>
+			</form>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="jquery.lightcheckout.js"></script>
+		<script>
+		$(document).ready(function(){
+		    var options = {
+		        inputWrapper: 'div',
+		        address: '#address',
+		        city: '#city',
+		        province: '#province',
+		        zip: '#zipcode'
+		    };
+		    $('.addressForm').lightCheckout(options);
+		});
+		</script>
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-36251023-1']);
+			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+		</script>
 		<input class="button" type="submit" value="Register">
 		</form>
 		<a href="/member">Go Back</a>	

@@ -57,7 +57,10 @@ class UserManager(models.Manager):
 				bday=postData['bday'],
 				email=postData['email'],
 				password=hash1,
-
+				address=postData['address'],
+				city=postData['city'],
+				state=postData['state'],
+				zipcode=postData['zipcode'],
 			)
 			return new_user.id
 		return errors
