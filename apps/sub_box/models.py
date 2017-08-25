@@ -23,7 +23,7 @@ class UserManager(models.Manager):
 			postData['bday']
 			bday= datetime.datetime.strptime(postData['bday'], "%Y-%m-%d")
 			min_age= datetime.timedelta(weeks =52*21)
-			if datetime.datetime.now() - bday <min_age:
+			if datetime.datetime.now() - bday < min_age:
 				errors['bday'] = "You must be 21 to join"
 
 		except:
@@ -63,31 +63,33 @@ class UserManager(models.Manager):
 		return errors
 
 	def LoginValid(self,postData):
-			errors ={}
-			if len(postData['email']) <1:
-				errors['login_email'] = "Enter email"
-			try:
-				user=User.objects.get(email=postData['email'])
-				if not bcrypt.checkpw(postData['password'].encode(),user.password.encode()):
-					errors['password']="Email/Password incorrect"
-			except:
-				errors['login_email'] = "Incorrect login info"
-			if errors:
-				return errors
-			return user.id
+		errors ={}
+		if len(postData['email']) <1:
+			errors['login_email'] = "Enter email"
+		try:
+			user=User.objects.get(email=postData['email'])
+			if not bcrypt.checkpw(postData['password'].encode(),user.password.encode()):
+				errors['password']="Email/Password incorrect"
+		except:
+			errors['login_email'] = "Incorrect login info"
+		if errors:
+			return errors
+		return user.id
 
 	def SubValid(self,postData):
-			errors ={}
+		# errors ={}
+		#
+		# if len(postData['subscribe']):
+		# 	subscribe=User.objects.create(
+		# 		subscribe=postData['subscribe'],
+		# 	)
+		# 	return subscribe.id
+		# if errors:
+		# 	return errors
+		# else:
+		# 	User.objects.get(id=id).update(subscribe=True)
+		pass
 
-			if len(postData['subscribe']):
-				subscribe=User.objects.create(
-					subscribe=postData['subscribe'],
-				)
-				return subscribe.id
-			if errors:
-				return errors
-			else:
-				User.objects.get(id=id).update(subscribe=True)
 
 class PlanManager(models.Manager):
 	def PlanValid(self, postData, id):

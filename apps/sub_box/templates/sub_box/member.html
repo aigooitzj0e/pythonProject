@@ -27,43 +27,9 @@
 			<span class="green">THIS </span> MONTHS THEME
 		</span>
 	</div>
-<<<<<<< HEAD
-	<h3 id="welcome">Welcome {{ User.name }}!</h3>
-	{% for plan in plans %}
-	<h3>plan.name</h3>
-	{% endfor %}
-	<h2>Change your plan:</h2>
-	<p>Click on your Choice to view</p>
-	<form class="form" action="/cart">
-		<ul class="strains">
-			<li>
-				<input id="Indica" type='radio' value='Indica' name='strain'/>
-				<label for='Indica'>INDICA</label>
-			</li>
-			<li>
-				<input id="Sativa" type='radio' value='Sativa' name='strain'/>
-				<label for='Sativa'>SATIVA</label>
-			</li>
-			<li>
-				<input id="Hybrid" type='radio' value='Hybrid' name='strain' checked="checked"/>
-				<label for='Hybrid'>HYBRID</label>
-			</li>
-		</ul>
-		<div class="pics">
-
-		</div>
-		<input type="submit" name="submit" value="Add to Cart">
-	</form>
-	<button type="button" name="unsuscribe"><a href="/unsuscribe">Unsuscribe!</a></button>
-	<div class="container">
-	  <div class="chevron"></div>
-	  <div class="chevron"></div>
-	  <div class="chevron"></div>
-	  <span class="text">Scroll down</span>
-=======
 	<div id="member">
 		<h3 id="welcome">Welcome {{ User.name }}!</h3>
-		<form id="strainform" action="#">
+		<form id="strainform" action="/ordercomplete">
 			<ul class="strains">
 				<li>
 					<input id="Indica" type='radio' value='Indica' name='strain' />
@@ -78,7 +44,7 @@
 					<label for='Hybrid'>HYBRID</label>
 				</li>
 			</ul>
-			<p id="choices"><span class="red">Click </span> on your Choice to view</p>
+			<p id="choices">Click on your Choice to view</p>
 			<div id="strainpics">
 				<h2 id="changePlan"><span class="green">Change </span> your plan: {{plan.strain}}</h2>
 			</div>
@@ -93,7 +59,6 @@
 			<div class="chevron"></div>
 			<span class="text">Scroll down</span>
 		</div>
->>>>>>> 0d6b1bfe2cccbb2f7718692ebb6e585cdc78acbb
 	</div>
 </body>
 
