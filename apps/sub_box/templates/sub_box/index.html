@@ -102,6 +102,30 @@
             					<td><input id="password" type="password" name="confirm"></td>
             				</tr>
     	    			</tbody>
+		            	<form class="addressForm">
+						   
+							</div>
+							<div class="address">
+								<label for="address">Address:</label>
+							 	<input class="form-control" name="address" id="address" type="text" />
+							</div>
+							<div class="city">
+								<label for="city">City:</label>
+								<input class="form-control" name="city" id="city" type="text" />
+							</div>
+							<div class="state">
+								<label>State:</label>
+							    <input class="form-control" name="state" id="state" type="text" />
+							</div>
+							<div class="zipcode">
+								<label for="zipcode">Zip Code:</label>
+							  	<input class="form-control" name="zipcode" id="zipcode" type="text" />
+							</div>
+							<div class="submit">
+							 	<input class="btn btn-primary" type="submit" value="Continue">
+							</div>
+						</form>
+
     	    		{% if messages %}
             		<div class="messages">
               		 	{% for message in messages %}
