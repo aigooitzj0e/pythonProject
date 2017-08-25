@@ -204,45 +204,56 @@ nav{
 
 .image_shown {
     display:inline-block;
-    color: rgb(0, 200, 127);
+    color: white;
+    height: 400px;
+    opacity: .9;
+    width: 100%;
 }
 
 .image_hidden {
     display: none;
-    color: rgb(0, 200, 127);
+    /*color: rgb(0, 200, 127);*/
 }
 
 .carousel_inner {
-    width:500px;
+    width:50%;
     height: 400px;
-    position: relative;
-    float: left;
-    padding-top: 320px;
-    
+    /*position: relative;*/
+    /*float: left;*/
+    margin:auto;
+    /*padding-top: 320px;*/
+
 }
 
 .carousel_inner img{
     width: 100%;
     height: 100%;
-    border: 5px solid rgb(0, 200, 127);
+    border-radius: 10px;
+    /*border: 5px solid rgb(0, 200, 127);*/
 
 }
 
 .carousel {
     background-image: url("../img/summernights_rev.jpg");
-    height: 800px;
-    width: 1000px;
+    height: 500px;
+    width: 100%;
     margin: 0 auto;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.carousel_inner h3{
+.carousel_inner p{
     text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .prev_link, .next_link {
     /*padding-top: 200px;*/
-    float:left;
-    margin-top: 500px;
+    /*float:left;*/
+    /*margin-top: 500px;*/
     background: black;
     padding: 10px 20px;
     color: white;
@@ -251,34 +262,44 @@ nav{
     text-transform: uppercase;
     box-shadow: none;
     border: 0px;
-    
+
 
 }
 
 .prev_link {
-    margin-right: 20px;
-    margin-left:80px;
+    position: absolute;
+    top: 335%;
+    left: 23%;
+    opacity: .7;
 }
 
 .next_link {
-
-    margin-left: 20px;
+    position: absolute;
+    top: 335%;
+    right: 23%;
+    opacity: .7;
 
 }
 
 .backtoschool {
     background-image: url("../img/smoke.jpg");
     height: 200px;
-    width: 700px;
-    margin: 0 auto;
-    padding-top:300px;
+    width: 45%;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
 }
 
-.backtoschool h1 {
-    color: rgb(0, 200, 127);
+.backtoschool p {
+    color: white;
     text-align: center;
-    margin-left: 25px;
-    
+    font-size: 3em;
+    text-shadow: 5px 5px 5px black;
+    text-transform: uppercase;
+
 }
 
 .backtoschool button {
@@ -290,9 +311,14 @@ nav{
     text-transform: uppercase;
     box-shadow: none;
     border: 0px;
-    margin-left: 280px;
-
+    margin: auto;
 }
+#bottomhalf{
+    background: white;
+    padding: 5%;
+}
+
+
 /*.messages{
     font-size: 14px;
 }*/
@@ -303,12 +329,12 @@ nav{
     width:100%;
     margin:auto;
     font-size: 35px;
-    font-stretch:
+    /*font-stretch:*/
 
 }
 
 #hybrid_box {
-    width:100%;
+    width:50%;
     margin:auto;
 
 }
@@ -316,10 +342,21 @@ nav{
 #boxdesc2 {
     display: inline-block;
     padding: 20px;
-    width: 70%;
-    margin-left: 200px;
+    /*width: 50%;*/
+    margin: 0 auto;
     text-align: center;
 }
+
+#phybrid {
+    font-size: 2.5em;
+    font-weight: 200px;
+    text-decoration: overline underline;
+}
+
+.hyb_container {
+    width: 100%
+}
+
 
 /*
 #show {
@@ -381,8 +418,19 @@ nav{
 /*
 }*/
 
+#sponsors {
+    width: 1400px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
 
-
+.h2_spon {
+    text-align: center;
+    text-transform: uppercase;
+}
 
 
 
@@ -453,6 +501,7 @@ nav{
 .strains label {
 	padding:5px;
 	cursor:pointer;
+
 }
 
 #welcome{
