@@ -206,17 +206,23 @@
 
     <div>
         <h3>Last Month's Stash:</h3>
-        <img src="../static/sub_box/img/summernights_rev.jpg" alt="last_month">
-        <div id="slider">
-	        <h3>Choice of Green Crack<img src="../static/sub_box/img/green_crack.jpg" alt="sativa" height="300px"></h3>
-	        <h3>Choice of Bubba Kush<img src="../static/sub_box/img/bubba_kush-2.jpg" alt="indica" height="300px"></h3>
-	        <h3>Choice of Sunset Haze<img src="../static/sub_box/img/sunsethaze.png" alt="hybrid" height="300px"></h3>
-	        <h3>Twisty Pipe<img src="../static/sub_box/img/twistypipe.jpg" alt="pipe" height="300px"></h3>
-	        <h3>Grinder<img src="../static/sub_box/img/grinder.jpg" alt="grinder" height="300px"></h3>
-	        <h3>Rolling Papers<img src="../static/sub_box/img/rollinpapers.jpg" alt="papers" height="300px"></h3>
-	        <h3>Lighter<img src="../static/sub_box/img/lighter.jpg" alt="lighter" height="300px"></h3>
-	        <h3>Chips<img src="../static/sub_box/img/chips.jpg" alt="chips" height="300px"></h3>
-    	</div>
+        <div class="carousel">
+	        <img src="../static/sub_box/img/summernights_rev.jpg" alt="last_month">
+	        <div class="carousel_outer">
+	        	<a class="prev_link" href="#">Previous</a>
+		        <div class="carousel_inner">
+			        <h3 class="image_shown">Choice of Green Crack<img src="../static/sub_box/img/green_crack.jpg" alt="sativa" height="300px"></h3>
+			        <h3 class="image_hidden">Choice of Bubba Kush<img src="../static/sub_box/img/bubba_kush-2.jpg" alt="indica" height="300px"></h3>
+			        <h3 class="image_hidden">Choice of Sunset Haze<img src="../static/sub_box/img/sunsethaze.png" alt="hybrid" height="300px"></h3>
+			        <h3 class="image_hidden">Twisty Pipe<img src="../static/sub_box/img/twistypipe.jpg" alt="pipe" height="300px"></h3>
+			        <h3 class="image_hidden">Grinder<img src="../static/sub_box/img/grinder.jpg" alt="grinder" height="300px"></h3>
+			        <h3 class="image_hidden">Rolling Papers<img src="../static/sub_box/img/rollinpapers.jpg" alt="papers" height="300px"></h3>
+			        <h3 class="image_hidden">Lighter<img src="../static/sub_box/img/lighter.jpg" alt="lighter" height="300px"></h3>
+			        <h3 class="image_hidden">Chips<img src="../static/sub_box/img/chips.jpg" alt="chips" height="300px"></h3>
+		        </div>
+		        <a class="next_link" href="#">Next</a>
+	    	</div>
+	    </div>
     </div>
     <div>
     	<h3>This Month's Theme:</h3>
@@ -225,7 +231,7 @@
         	<button href="/cart">Subscribe</button>
 
     </div>
-    <div>
+    <div class="carousel">
 		<h2>Sponsors</h2>
 		<img src="../static/sub_box/img/trump.png" alt="trump" height="100px">
 		<img src="../static/sub_box/img/hightimes.jpg" alt="hightimes" height="200px">
@@ -235,5 +241,6 @@
 		<img src="../static/sub_box/img/zimbabwe.png" alt="zimbabwe" height="200px">
 
     </div>
+
     </body>
 </html>
