@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.utils.crypto import get_random_string
 from django.shortcuts import render, HttpResponse, redirect
 from .models import User
 from django.contrib import messages
@@ -67,4 +67,7 @@ def logout(request):
 	return redirect('/')
 
 def ordercomplete(request):
-	return render(request, "sub_box/ordercomplete.html")
+	context = {
+		'random' : get_random_string(length=14),
+	}
+	return render(request, "sub_box/ordercomplete.html", context)
