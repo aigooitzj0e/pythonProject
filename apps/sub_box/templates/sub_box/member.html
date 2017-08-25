@@ -27,7 +27,7 @@
 		</span>
 	</div>
 	<div id="member">
-		<h3 id="welcome">Welcome {{ User.name }}!</h3>
+		<h3 id="welcome">Welcome {{ main_user.first_name }}!</h3>
 		<form id="strainform" action="/ordercomplete">
 			<ul class="strains">
 				<li>
@@ -45,7 +45,7 @@
 			</ul>
 			<p id="choices">Click on your Choice to view</p>
 			<div id="strainpics">
-				<h2 id="changePlan"><span class="green">Choose </span> your plan: {{plan.strain}}</h2>
+				<h2 id="changePlan"><span class="green">Choose </span> your plan</h2>
 			</div>
 			<button id="buttonstrain" type="submit" name="submit">
 				<span class="green">Add </span> to cart!

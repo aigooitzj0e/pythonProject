@@ -5,6 +5,7 @@ from datetime import date
 import bcrypt, re, datetime
 EMAIL_REGEX=re.compile(r'^[a-zA-Z0-9+._-]+@[a-zA-Z0-9+._-]+\.[a-zA-Z]+$')
 NAME_REGEX=re.compile(r'^[A-Za-z]\w+$')
+ADDRESS_REGEX=re.compile(r'^[0-9]+[A-Za-z]+[A-Za-z]+$')
 # Create your models here.
 
 class UserManager(models.Manager):
@@ -47,6 +48,22 @@ class UserManager(models.Manager):
 			errors['password']="Password must be at least 8 characters!"
 		elif postData['password']!=postData['confirm']:
 			errors['confirm']="Password is not valid."
+
+		if len(postData['address'])<0:
+			errors['address'] = "Please provide address"
+		# elif not re.match(ADDRESS_REGEX, postData['address']):
+		# 	errors['address'] = "Invalid address"
+
+		if len(postData['city'])<0:
+			errors['city'] = "Please provide city"
+
+		if len(postData['state'])<0:
+			errors['state'] = "Please provide state"
+
+		if len(postData['zipcode'])<5:
+			errors['zipcode'] = "Zip code must be at least 5 digits"
+
+
 
 		if len(errors) == 0:
 			hash1 = bcrypt.hashpw((postData['password'].encode()),bcrypt.gensalt(5))
@@ -122,6 +139,10 @@ class User(models.Model):
 	bday = models.DateField(null=True)
 	email = models.CharField(max_length=255)
 	password = models.CharField(max_length=255)
+	address = models.CharField(max_length=255)
+	city= models.CharField(max_length=255)
+	state = models.CharField(max_length=255)
+	zipcode = models.IntegerField()
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
