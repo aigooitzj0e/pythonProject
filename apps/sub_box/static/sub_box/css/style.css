@@ -42,13 +42,12 @@ nav{
 
 .logo1{
     /*display: fixed;*/
-    height: 50px;
+    height: 45px;
+    padding: 8px 0px 0px 8px;
 }
 
 
-#login {
-    /*float: left;*/
-}
+
 
 .nbl {
     text-decoration: none;
@@ -122,6 +121,7 @@ nav{
 #about_us {
     width: 1200px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 #sec1 {
@@ -129,6 +129,7 @@ nav{
     /*text-align: center;*/
     padding: 50px 0px 50px 80px;
     display: inline-block;
+    vertical-align: top;
 }
 
 .about_us_pic {
@@ -224,15 +225,21 @@ nav{
 
 }
 
+.carousel {
+    background-image: url("../img/summernights_rev.jpg");
+    height: 700px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
 .carousel_inner h3{
     text-align: center;
-    
 }
 /*.messages{
     font-size: 14px;
 }*/
 
-/*#hybrid_box h1 {
+#hybrid_box h1 {
     border-top:2px;
     border-bottom: 2px;
     width:100%;
@@ -240,9 +247,9 @@ nav{
     font-size: 35px;
     font-stretch:
 
-}*/
+}
 
-/*#hybrid_box {
+#hybrid_box {
     width:100%;
     margin:auto;
 
@@ -255,6 +262,8 @@ nav{
     margin-left: 200px;
     text-align: center;
 }
+
+/*
 #show {
     display: show;
 
