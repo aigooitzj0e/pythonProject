@@ -216,6 +216,7 @@ nav{
     width:500px;
     height: 400px;
     position: relative;
+    float: left;
 }
 
 .carousel_inner img{
@@ -235,6 +236,24 @@ nav{
 .carousel_inner h3{
     text-align: center;
 }
+
+.prev_link, .next_link {
+
+    float:left;
+    margin-top: 170px;
+
+}
+
+.prev_link {
+    margin-right: 20px;
+}
+
+.next_link {
+
+    margin-left: 20px;
+    
+}
+
 /*.messages{
     font-size: 14px;
 }*/
