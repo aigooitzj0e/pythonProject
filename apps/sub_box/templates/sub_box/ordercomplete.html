@@ -31,8 +31,8 @@
             <h3>Order Details</h3>
             <p>Your order number is: <a href="#">{{ random }}</a></p>
 
-            <p>You subscribed to the <span class="green">INDICA</span> box!</p>
-            <p>Item will be shipped to (name) at (address)</p>
+            <p>You subscribed to the <span class="green">HYBRID</span> box!</p>
+            <p>Item will be shipped to {{ main_user.first_name }} {{ main_user.last_name }} at {{main_user.address}} {{main_user.city}} {{main_user.state}}, {{main_user.zipcode}}</p>
         </div>
 
     </body>
