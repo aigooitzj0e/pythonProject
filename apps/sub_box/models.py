@@ -131,7 +131,6 @@ class PlanManager(models.Manager):
 
 
 
-
 class User(models.Model):
 	first_name  = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
@@ -148,6 +147,9 @@ class User(models.Model):
 
 	objects = UserManager()
 
+	def __unicode__(self):
+		return self.first_name + " " + self.last_name
+
 class Plan(models.Model):
 	STRAIN_CHOICES = (
 		('Indica', 'Indica'),
@@ -162,3 +164,6 @@ class Plan(models.Model):
 	updated_at = models.DateTimeField(auto_now=True)
 
 	objects = PlanManager()
+
+	def __unicode__(self):
+		return self.strain + "-" + self.user.first_name + " " + self.user.last_name
