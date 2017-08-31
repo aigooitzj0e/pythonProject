@@ -19,7 +19,12 @@ def login(request):
 		for field, error in errors.iteritems():
 			messages.error(request, error, extra_tags=field)
 		return redirect('/') #Must redirect to pop up login
+
+
 	request.session['id']=errors
+	user = User.objects.get(id = request.session['id'])
+	if user.admin == True:
+		return redirect('/admin_dash')
 	messages.success(request, "You are logged in!")
 	return redirect('/member')
 
@@ -80,3 +85,21 @@ def ordercomplete(request):
 
 	}
 	return render(request, "sub_box/ordercomplete.html", context)
+
+
+def admin_dash(request):
+	context = {
+		'users': User.objects.all(),
+		'subscribed': User.objects.filter(subscribe = True),
+		'sub_count': User.objects.filter(subscribe = True).count(),
+		'user_count': User.objects.all().count(),
+	}
+
+	try: #checks is user is admin.
+		request.session['id']
+		user = User.objects.get(id = request.session['id'])
+		if user.admin == True:
+			return render(request, "sub_box/admin_dash.html", context)
+	except:
+		return redirect('/')
+	return redirect('/')
