@@ -79,7 +79,7 @@
 
 }
 
-#log_form {
+#log_form, #post-form{
 	width: 230px;
 	margin: auto;
 }

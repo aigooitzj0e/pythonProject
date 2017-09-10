@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.utils.crypto import get_random_string
 from django.shortcuts import render, HttpResponse, redirect
+from django.http import JsonResponse
 from .models import User, Plan
 from django.contrib import messages
 
@@ -25,12 +26,11 @@ def login(request):
 	user = User.objects.get(id = request.session['id'])
 	if user.admin == True:
 		return redirect('/admin_dash')
-	messages.success(request, "You are logged in!")
+	# messages.success(request, "You are logged in!")
 	return redirect('/member')
 
 def register(request):
 	errors=User.objects.RegValid(request.POST)
-	print errors,type(errors)
 
 	if type(errors)==dict:
 		for error in errors.itervalues():
@@ -95,11 +95,20 @@ def admin_dash(request):
 		'user_count': User.objects.all().count(),
 	}
 
-	try: #checks is user is admin.
+	try: #checks if user is admin.
 		request.session['id']
 		user = User.objects.get(id = request.session['id'])
 		if user.admin == True:
 			return render(request, "sub_box/admin_dash.html", context)
 	except:
-		return redirect('/')
+		pass
 	return redirect('/')
+
+def validate_email(request):
+	email = request.GET.get('email', None)
+	data = {
+		'is_taken': User.objects.filter(email__iexact = email).exists(),
+	}
+
+	return JsonResponse(data)
+# //===================================================

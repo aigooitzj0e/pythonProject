@@ -37,11 +37,11 @@ class UserManager(models.Manager):
 			if datetime.datetime.strptime(postData['bday'],"%Y-%m-%d")>datetime.datetime.today():
 				errors['bday'] = "The date cannot be in the future"
 
-		if len(postData['email'])<1:
+		if len(postData['reg-email'])<1:
 			errors['email'] = "Email cannot be blank!"
-		elif len(User.objects.filter(email=postData['email']))>0:
+		elif len(User.objects.filter(email=postData['reg-email']))>0:
 			errors['email'] = "Email already in use"
-		elif not re.match(EMAIL_REGEX, postData['email']):
+		elif not re.match(EMAIL_REGEX, postData['reg-email']):
 			errors['email'] = "Invalid email"
 
 		if len(postData['password'])<8:
@@ -72,7 +72,7 @@ class UserManager(models.Manager):
 				first_name=postData['first_name'],
 				last_name=postData['last_name'],
 				bday=postData['bday'],
-				email=postData['email'],
+				email=postData['reg-email'],
 				password=hash1,
 				address=postData['address'],
 				city=postData['city'],

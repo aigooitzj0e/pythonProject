@@ -24,6 +24,46 @@ $(document).ready(function() {
 		$(".reg_modal_main").fadeOut();
 	});
 
+// Log/Reg Validation Messages
+
+	$('#post-form').submit(function(e){
+		e.preventDefault(); //Prevents the form from doing its normal thing when submitted
+		console.log('form submitted');
+	});
+
+	$('#email').change(function(){
+		var email = $(this).val();
+		console.log(email);
+		$.ajax ({
+			url: 'ajax/validate_email/',
+			data: {
+				'email': email
+			},
+			dataType: 'json',
+			success: function (data) {
+				console.log(data.is_taken);
+				if (data.is_taken == false) {
+					// alert("This email is not registered");
+					$('#email').addClass('error')
+				}
+				else {
+					$('#email').removeClass('error')
+				}
+			}
+		});
+	});
+
+	// $('#first_name').change(function(){
+	// 	var firstName = $(this).val();
+	// 	if (firstName.length < 2) {
+	// 		$(this).css('border-color', "red");
+	// 	}
+	// 	else {
+	// 		$(this).css('border-color', 'inherit')
+	// 	}
+	// })
+
+
 // Add Logo Hovers Here
 
 

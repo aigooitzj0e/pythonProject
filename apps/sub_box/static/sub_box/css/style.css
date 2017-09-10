@@ -199,6 +199,24 @@ nav{
     text-align: center;
 }
 
+.error {
+    border: 1px solid red;
+}
+
+.logout{
+	position: absolute;
+	top: 25%;
+	left: 92%;
+	color: white;
+	text-decoration: none;
+	letter-spacing: 3px;
+}
+
+.logout:hover{
+	color: rgb(0, 200, 127);
+}
+
+
 
 
 

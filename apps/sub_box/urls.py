@@ -13,6 +13,6 @@ urlpatterns = [
 	url(r'^member$', views.member),
 	url(r'^cart$', views.cart),
     url(r'^ordercomplete$', views.ordercomplete),
-
+    url(r'^ajax/validate_email/$', views.validate_email, name = 'validate_email'),
 
 ]
