@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>7Leaves</title>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
+    <link rel="stylesheet" href="{% static 'sub_box/css/loginModal.css' %}" title="Login">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../static/sub_box/js/main.js"></script>
+
+</head>
+
+<body>
+    <div id="nb">
+        <nav>
+            <div class="container">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+
+            <img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo" />
+            <ul>
+                <li><a class="nbl" href="#">Home</a></li>
+                <li><a class="nbl" href="#sec1">About Us</a></li>
+                <li><a class="nbl" href="#sec2">Choose Your Box</a></li>
+            </ul>
+            <!-- LOGIN / MODAL START -->
+            <a class="call_modal" style="cursor:pointer;">LOGIN</a>
+            <div class="modal">
+                <div class="modal_close close"></div>
+                <div class="modal_main">
+                    <img src="../../static/sub_box/img/closebtn.png" class="close" style="margin-top:13px;left:93%;position:fixed;">
+
+                    <p class="log_p">LOGIN</p>
+                    <hr>
+
+                    <form id="log_form" method="POST" action="/login">
+    	    		<h3 class="log_h3">WELCOME</h3>
+    	    		{% csrf_token %}
+    	    		<table>
+    	    			<tbody>
+    	    				<tr>
+    	    					<td>Email:</td>
+    	    					<td><input id="email" type="email" name="email" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Password:</td>
+    	    					<td><input id="password" type="password" name="password" value=""></td>
+    	    				</tr>
+    	    			</tbody>
+        	    		{% if messages %}
+                		<div class="messages">
+                  		 	{% for message in messages %}
+                    		<p class="red">{{ message }}</p>
+                    		{% endfor %}
+                		</div>
+                		{% endif %}
+    	    		</table>
+    	    		<input class="button" type="submit" value="Login">
+    	    		</form>
+
+                    <hr>
+                    <p class="log_acc">Don't have an account? </p>
+    	    		<a class="reg_change" style="cursor:pointer;"><span class="green">Register Here</span></a>
+
+                </div>
+            </div>
+
+            <!-- Register MODAL -->
+
+            <div class="reg_modal">
+                <div class="modal_close close"></div>
+                <div class="reg_modal_main">
+                    <img src="../../static/sub_box/img/closebtn.png" class="reg_close" style="margin-top:13px;left:93%;position:fixed;">
+
+                    <p class="log_p">REGISTER</p>
+                    <hr>
+
+                    <form id="log_form" method="POST" action="/register">
+    	    		{% csrf_token %}
+    	    		<table>
+    	    			<tbody>
+                            <tr>
+    	    					<td>First Name:</td>
+    	    					<td><input type="text" id="first_name" name="first_name" value=""></td>
+    	    				</tr>
+                            <tr>
+    	    					<td>Last Name:</td>
+    	    					<td><input type="text" id="last_name" name="last_name" value=""></td>
+    	    				</tr>
+							<tr>
+								<td>Address:</td>
+							 	<td><input class="form-control" name="address" id="address" type="text" /></td>
+							</tr>
+							<tr>
+								<td>City:</td>
+								<td><input class="form-control" name="city" id="city" type="text" /></td>
+							</tr>
+							<tr>
+								<td>State:</td>
+							    <td><input class="form-control" name="state" id="state" type="text" /></td>
+							</tr>
+							<tr>
+								<td>Zip Code:</td>
+							  	<td><input class="form-control" name="zipcode" id="zipcode" type="text" /></td>
+							</tr>
+
+                            <tr>
+    	    					<td>Birthdate:</td>
+    	    					<td><input type="date" id="birthday" name="bday" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Email:</td>
+    	    					<td><input id="email" type="email" name="email" value=""></td>
+    	    				</tr>
+    	    				<tr>
+    	    					<td>Password:</td>
+    	    					<td><input id="password" type="password" name="password" value=""></td>
+    	    				</tr>
+                            <tr>
+            					<td>Confirm:</td>
+            					<td><input id="password" type="password" name="confirm"></td>
+            				</tr>
+    	    			</tbody>
+
+    	    		{% if messages %}
+            		<div class="messages">
+              		 	{% for message in messages %}
+                		<p>{{ message }}</p>
+                		{% endfor %}
+            		</div>
+            		{% endif %}
+    	    		</table>
+    	    		<input class="button" type="submit" value="Register">
+    	    		</form>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="pimg1">
+        <div class="ptext1">
+            <span class="border">
+                    <span class="green">7</span>LEAVES
+            </span>
+        </div>
+    </div>
+
+    <div id="about_us">
+
+        <img class="about_us_pic" src="../static/sub_box/img/boximg2.jpg" height="300" alt="box pic">
+
+        <section id="sec1" class="section">
+            <h2><span class="green">The 7Leaves Mission</span></h2>
+            <p>Each box is curated with specific items to our monthly related themes. We aim to offer quality products with the best value for the cannabis enthusiast. With years of experience in toking, we want to make sure our customers will receive the best experience in each box. Whether you are a first time toker or an experienced smoker, our box is made just for you.</p>
+        </section>
+    </div>
+
+
+    <div class="worksContainer">
+        <h1 class="centerh1">How it Works</h1>
+        <section class="section howitworks">
+            <h2>What's in the box?</h2>
+            <p>A random variety of top tier strains along with an accessory to enhance your overall experience.
+                <div class="iconcontainer">
+                    <img class="logo" src="../static/sub_box/img/icon1.jpg" alt="Logo1">
+                    <img class="logo" src="../static/sub_box/img/icon2.jpg" alt="Logo2">
+                </div>
+        </section>
+
+        <section class="howitworks">
+            <h2>Top Tier</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde eaque cupiditate voluptatibus, sed, reprehenderit accusamus natus nam voluptas doloremque mollitia quia dicta molestiae expedita aspernatur maiores delectus accusantium
+                officia doloribus maxime ad alias veritatis cumque est quae? Nulla voluptatibus, reprehenderit vitae sint, nobis fuga </p>
+        </section>
+    </div>
+
+
+    <div class="pimg2">
+        <div class="ptext1">
+            <span class="border">
+                    CHOOSE YOUR <span class="green">BOX</span>
+            </span>
+        </div>
+    </div>
+
+    <img  id="sec2" class="choosebox" src="../static/sub_box/img/boximg3.jpg" height="350px" alt="Logo2">
+
+    <div id="boxdesc-container">
+        <section class="boxdesc">
+            <p><span class="red">Effects:</span> Tends to be a sedating and relaxing, full-body experience.</p>
+            <p><span class="red">Helps with:</span> Anxiety, insomnia, pain, and muscle spasms.</p>
+        </section>
+
+        <section class="boxdesc">
+            <p><span class="red">Effects:</span> Tends to be an uplifting and creative experience that has a cerebrally-focused effect.</p>
+            <p><span class="red">Helps with:</span> Depression, ADD, fatigue, and mood disorders.</p>
+        </section>
+    </div>
+
+    <div class="hyb_container">
+        <div id="hybrid_box">
+        	<section id="boxdesc2">
+        		<p class="green" id="phybrid">HYBRID</p>
+        		<p>Hybrids are a combination of both Indica and Sativa strains through the breeding process. Hybrids usually have the most favorable aspects of each parent strain. The dominant traits of the strain can vary, which means it could be sativa or indica dominant, or right in the middle. </p>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="pimg3">
+        <div class="ptext1">
+            <span class="border">
+                    LAST MONTH'S <span class="green">STASH</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="slickContainer">
+        <div class="slick">
+            <div><img src="../static/sub_box/img/green_crack.jpg" alt="sativa" height="200px" ></div>
+            <div><img src="../static/sub_box/img/bubba_kush-2.jpg" alt="indica" height="200px" ></div>
+            <div><img src="../static/sub_box/img/sunsethaze.png" alt="hybrid" height="200px" ></div>
+            <div><img src="../static/sub_box/img/twistypipe.jpg" alt="pipe" height="200px" ></div>
+            <div><img src="../static/sub_box/img/grinder.jpg" alt="grinder" height="200px" ></div>
+            <div><img src="../static/sub_box/img/rollinpapers.jpg" alt="papers" height="200px" ></div>
+            <div><img src="../static/sub_box/img/lighter.jpg" alt="lighter" height="200px" ></div>
+            <div><img src="../static/sub_box/img/chips.jpg" alt="chips" height="200px" ></div>
+        </div>
+    </div>
+
+    <div class="btmReg">
+        <!-- <h1>NEXT MONTH'S THEME!</h1> -->
+        <div id="backtoschool">
+        	<h2><a id="static" class="call_modal" style="cursor:pointer;">REGISTER NOW</a></h2>
+		</div>
+    </div>
+	<div id="contact">
+		<div id="info">
+			<img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo" />
+			<p>Copyright © 2017 7Leaves, Inc.</p>
+		</div>
+		<div id="follow">
+			<h3>Follow Us!</h3>
+			<ul id="social">
+				<li><a href="#"><img src="../static/sub_box/img/ig.png" height="50px"></a></li>
+				<li><a href="#"><img src="../static/sub_box/img/fb.png" height="50px"></a></li>
+				<li><a href="#"><img src="../static/sub_box/img/in.png" height="50px"></a></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('.slick').slick({
+                // slidesToShow: 1,
+                // slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                variableWidth: true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 4,
+            });
+        });
+    </script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+</body>
+</html>

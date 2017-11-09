@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Unsubscribe</title>
+   <meta charset="utf-8">
+ 	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login Registration">
+</head>
+<body>
+<!-- we can use the line below to see all of our data in our template -->
+	<div id="Unsubscribe">
+	<h1>Are you sure?</h1>
+		
+		<form class="" action="/unsubscribe">
+		<select name="choice">
+		    <option value="yes">Yes</option>
+		    <option value="no">No</option>
+		</select>
+		<input type="submit" name="submit" value="Continue">
+	</form>
+		
+ 		
+  	</div>
+</body>
+</html>

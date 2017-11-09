@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Member</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
+	<link rel="stylesheet" href="{% static 'sub_box/css/button.css' %}" title="Login">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../static/sub_box/js/main.js"></script>
+</head>
+
+<body>
+	<nav>
+		<img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo" />
+		<ul>
+			<li><a class="nbl" href="/">Home</a></li>
+			<li><a class="nbl" href="#">About Us</a></li>
+			<li><a class="nbl" href="#">How it Works</a></li>
+			<li><a class="nbl" href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+	<div id="themepic">
+		<span class="border2">
+			<span class="green">THIS </span> MONTHS THEME
+		</span>
+	</div>
+	<div id="member">
+		<h3 id="welcome">Welcome {{ main_user.first_name }}!</h3>
+		<form id="strainform" action="/ordercomplete">
+			<ul class="strains">
+				<li>
+					<input id="Indica" type='radio' value='Indica' name='strain' />
+					<label for='Indica'>INDICA</label>
+				</li>
+				<li>
+					<input id="Sativa" type='radio' value='Sativa' name='strain' />
+					<label for='Sativa'>SATIVA</label>
+				</li>
+				<li>
+					<input id="Hybrid" type='radio' value='Hybrid' name='strain' checked="checked" />
+					<label for='Hybrid'>HYBRID</label>
+				</li>
+			</ul>
+			<p id="choices">Click on your Choice to view</p>
+			<div id="strainpics">
+				<h2 id="changePlan"><span class="green">Choose </span> your plan</h2>
+			</div>
+			<button id="buttonstrain" type="submit" name="submit">
+				<span class="green">Add </span> to cart!
+			</button>
+		</form>
+		<button id="unsuscribem" type="button" name="unsuscribe"><a href="#" id="suslink">Unsuscribe</a></button>
+		<div class="container">
+			<div class="chevron"></div>
+			<div class="chevron"></div>
+			<div class="chevron"></div>
+			<span class="text">Scroll down</span>
+		</div>
+	</div>
+</body>
+
+</html>

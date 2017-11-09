@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>7Leaves</title>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'sub_box/css/style.css' %}" title="Login">
+        <link rel="stylesheet" href="{% static 'sub_box/css/loginModal.css' %}" title="Login">
+        <link rel="stylesheet" href="{% static 'sub_box/css/orderCSS.css' %}" title="Login">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../../static/sub_box/js/main.js"></script>
+    </head>
+    <body>
+        <div id="nb">
+            <nav>
+                <img class="logo1" src="../../static/sub_box/img/logo.jpg" alt="logo" />
+                <ul>
+                    <li><a class="nbl" href="/">Home</a></li>
+                    <li><a class="nbl" href="#sec1">About Us</a></li>
+                    <li><a class="nbl" href="#sec2">How it Works</a></li>
+                </ul>
+                <!-- LOGIN / MODAL START -->
+                <a href="/logout" class="call_modal" style="cursor:pointer;">LOGOUT</a>
+
+            </nav>
+        </div>
+        <div id="ordercontainer">
+            <h1>Order complete!</h1>
+            <p>An email confirmation has been sent to you</p>
+            <hr>
+            <h3>Order Details</h3>
+            <p>Your order number is: <a href="#">{{ random }}</a></p>
+
+            <p>You subscribed to the <span class="green">HYBRID</span> box!</p>
+            <p>Item will be shipped to {{ main_user.first_name }} {{ main_user.last_name }} at {{main_user.address}} {{main_user.city}} {{main_user.state}}, {{main_user.zipcode}}</p>
+        </div>
+
+    </body>
+</html>
